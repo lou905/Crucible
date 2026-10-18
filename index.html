@@ -20,8 +20,9 @@
   --f-record:"Courier Prime", "Courier New", ui-monospace, monospace;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html,body{min-height:100%}
-body{background:var(--night);color:var(--tallow);font-family:var(--f-body);font-size:17px;line-height:1.65;padding-inline:16px;padding-block:0 48px;position:relative;overflow-x:hidden}
+body{background:var(--night);color:var(--tallow);font-family:var(--f-body);font-size:19px;line-height:1.65;padding-inline:16px;padding-block:0 48px;position:relative;overflow-x:hidden}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   background:radial-gradient(ellipse at 50% 40%, transparent 35%, var(--blood) 140%);
   opacity:calc(var(--fear) * 0.9);transition:opacity 1.2s ease}
@@ -30,19 +31,19 @@ body::after{content:"";position:fixed;left:50%;top:-30vh;width:120vw;height:80vh
   animation:flicker 5s infinite ease-in-out}
 @keyframes flicker{0%,100%{opacity:.8}40%{opacity:.6}55%{opacity:.9}70%{opacity:.7}}
 @media (prefers-reduced-motion: reduce){body::after{animation:none}*{transition:none!important}}
-.wrap{position:relative;z-index:1;max-width:680px;margin:0 auto}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto}
 
 header{display:flex;flex-direction:column;gap:14px;padding-block:22px 18px;border-bottom:1px solid var(--line)}
 .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
-.brand{font-family:var(--f-caps);font-size:20px;letter-spacing:.04em;color:var(--ember);background:none;border:0;padding:0;cursor:pointer}
-.acts{display:flex;gap:6px;font-family:var(--f-caps);font-size:14px;color:var(--dim)}
+.brand{font-family:var(--f-caps);font-size:22px;letter-spacing:.04em;color:var(--ember);background:none;border:0;padding:0;cursor:pointer}
+.acts{display:flex;gap:6px;font-family:var(--f-caps);font-size:16px;color:var(--dim)}
 .acts span{padding:1px 8px;border:1px solid var(--line);border-radius:2px}
 .acts span.on{color:var(--night);background:var(--ember);border-color:var(--ember)}
 .acts span.done{color:var(--tallow)}
 .meters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.meter label{display:flex;justify-content:space-between;font-family:var(--f-record);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+.meter label{display:flex;justify-content:space-between;font-family:var(--f-record);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
 .meter b{font-weight:400;color:var(--tallow);font-variant-numeric:tabular-nums}
-.bar{height:6px;background:var(--line);margin-top:5px;position:relative;overflow:hidden}
+.bar{height:8px;background:var(--line);margin-top:5px;position:relative;overflow:hidden}
 .bar i{position:absolute;inset:0 auto 0 0;transition:width .8s ease}
 .m-name i{background:var(--ember)} .m-con i{background:var(--moss)} .m-fear i{background:var(--blood)}
 .delta{font-style:normal;margin-left:4px;opacity:0;transition:opacity .3s}
@@ -51,42 +52,42 @@ header{display:flex;flex-direction:column;gap:14px;padding-block:22px 18px;borde
 .m-fear .delta.up{color:var(--blood)} .m-fear .delta.down{color:var(--moss)}
 
 main{padding-block:28px 0}
-.docket{font-family:var(--f-record);font-size:13px;color:var(--dim);letter-spacing:.04em;display:flex;flex-wrap:wrap;gap:4px 14px}
+.docket{font-family:var(--f-record);font-size:14.5px;color:var(--dim);letter-spacing:.04em;display:flex;flex-wrap:wrap;gap:4px 14px}
 .docket span:first-child{color:var(--ember)}
-h1{font-family:var(--f-display);font-weight:400;font-size:clamp(30px,7vw,46px);line-height:1.1;margin:10px 0 18px;text-wrap:balance}
-h2{font-family:var(--f-display);font-weight:400;font-size:24px;margin:0 0 8px}
-.prose{display:flex;flex-direction:column;gap:14px;max-width:62ch}
+h1{font-family:var(--f-display);font-weight:400;font-size:clamp(32px,7vw,54px);line-height:1.1;margin:10px 0 18px;text-wrap:balance}
+h2{font-family:var(--f-display);font-weight:400;font-size:27px;margin:0 0 8px}
+.prose{display:flex;flex-direction:column;gap:16px;max-width:70ch}
 .prose p{margin:0}
 .prose .aside{font-style:italic;color:var(--dim)}
 .scene{animation:rise .6s ease both}
 @keyframes rise{from{opacity:.0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
 .choices{display:flex;flex-direction:column;gap:10px;margin-top:28px}
-.choice{font:inherit;font-size:16px;line-height:1.5;color:var(--tallow);text-align:left;background:var(--panel);border:1px solid var(--line);padding:14px 16px 14px 44px;cursor:pointer;position:relative;transition:border-color .2s, background .2s}
+.choice{font:inherit;font-size:17.5px;line-height:1.5;color:var(--tallow);text-align:left;background:var(--panel);border:1px solid var(--line);padding:14px 16px 14px 44px;cursor:pointer;position:relative;transition:border-color .2s, background .2s}
 .choice::before{content:attr(data-k);position:absolute;left:16px;top:13px;font-family:var(--f-caps);color:var(--ember)}
 .choice:hover{border-color:var(--ember);background:color-mix(in srgb, var(--panel) 85%, var(--ember))}
 .choice:focus-visible,.btn:focus-visible,.brand:focus-visible,summary:focus-visible{outline:2px solid var(--ember);outline-offset:2px}
 
 details.record{margin-top:30px;border-top:1px dashed var(--line);padding-top:14px}
-summary{cursor:pointer;font-family:var(--f-record);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);list-style:none}
+summary{cursor:pointer;font-family:var(--f-record);font-size:14.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);list-style:none}
 summary::-webkit-details-marker{display:none}
 summary::before{content:"+ ";color:var(--ember)}
 details[open] summary::before{content:"\2212 "}
 .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:14px}
-.col h3{font-family:var(--f-caps);font-weight:400;font-size:16px;margin:0 0 6px;color:var(--ember)}
-.col p{margin:0;font-family:var(--f-record);font-size:14px;line-height:1.55;color:var(--tallow)}
+.col h3{font-family:var(--f-caps);font-weight:400;font-size:17.5px;margin:0 0 6px;color:var(--ember)}
+.col p{margin:0;font-family:var(--f-record);font-size:16px;line-height:1.55;color:var(--tallow)}
 @media (max-width:560px){.cols{grid-template-columns:1fr}.meters{gap:10px}}
 
 .title-card{padding-block:30px 10px}
-.title-card h1{font-size:clamp(44px,12vw,76px);margin:6px 0 6px}
-.kicker{font-family:var(--f-record);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ember)}
-.sub{font-family:var(--f-display);font-style:italic;font-size:21px;color:var(--dim);margin:0 0 24px}
+.title-card h1{font-size:clamp(46px,12vw,88px);margin:6px 0 6px}
+.kicker{font-family:var(--f-record);font-size:14.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ember)}
+.sub{font-family:var(--f-display);font-style:italic;font-size:23px;color:var(--dim);margin:0 0 24px}
 .legend{display:grid;gap:10px;margin:22px 0 4px;padding:16px;border:1px solid var(--line);background:var(--panel)}
-.legend div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px;font-size:15px}
-.legend dt{font-family:var(--f-record);font-size:12px;text-transform:uppercase;letter-spacing:.08em;padding-top:3px}
+.legend div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px;font-size:16.5px}
+.legend dt{font-family:var(--f-record);font-size:13.5px;text-transform:uppercase;letter-spacing:.08em;padding-top:3px}
 .legend dd{margin:0}
 .toprt{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.snd{font-family:var(--f-record);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);background:transparent;border:1px solid var(--line);padding:4px 10px;cursor:pointer}
+.snd{font-family:var(--f-record);font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);background:transparent;border:1px solid var(--line);padding:4px 10px;cursor:pointer}
 .snd[aria-pressed="true"]{border-color:var(--ember);color:var(--ember)}
 .snd:focus-visible,.hs:focus-visible{outline:2px solid var(--ember);outline-offset:2px}
 .art{position:relative;width:100%;max-width:100%;aspect-ratio:16/7;border:1px solid var(--line);background:#0b0d10;overflow:hidden;margin-bottom:18px}
@@ -96,11 +97,11 @@ details[open] summary::before{content:"\2212 "}
 .hs::after{content:"";position:absolute;inset:5px;border-radius:50%;border:1.5px solid var(--ember);animation:ping 2.2s infinite ease-out}
 .hs.seen::before{background:var(--dim);box-shadow:none}.hs.seen::after{animation:none;opacity:.35}
 @keyframes ping{0%{transform:scale(.6);opacity:.9}100%{transform:scale(1.5);opacity:0}}
-.hint{position:absolute;right:8px;bottom:6px;font-family:var(--f-record);font-size:11px;color:var(--tallow);background:rgba(0,0,0,.5);padding:2px 6px;pointer-events:none}
+.hint{position:absolute;right:8px;bottom:6px;font-family:var(--f-record);font-size:12.5px;color:var(--tallow);background:rgba(0,0,0,.5);padding:2px 6px;pointer-events:none}
 .exhibit{border:1px solid var(--line);border-left:3px solid var(--ember);background:var(--panel);padding:12px 14px;margin:-6px 0 18px;display:grid;gap:4px;animation:rise .35s ease both}
-.exhibit h3{font-family:var(--f-caps);font-weight:400;font-size:17px;margin:0;color:var(--ember);display:flex;justify-content:space-between;align-items:baseline;gap:10px}
-.exhibit p{margin:0;font-size:15px;line-height:1.55}
-.exhibit button{font-family:var(--f-record);font-size:12px;background:none;border:0;color:var(--dim);cursor:pointer}
+.exhibit h3{font-family:var(--f-caps);font-weight:400;font-size:19px;margin:0;color:var(--ember);display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.exhibit p{margin:0;font-size:16.5px;line-height:1.55}
+.exhibit button{font-family:var(--f-record);font-size:13.5px;background:none;border:0;color:var(--dim);cursor:pointer}
 .prose p{animation:rise .55s ease both;animation-delay:calc(var(--i,0) * .22s)}
 .choices .choice{animation:rise .5s ease both;animation-delay:calc(var(--d,0) * 1s)}
 .pick svg{width:52px;height:52px;color:var(--ember)}
@@ -109,25 +110,63 @@ details[open] summary::before{content:"\2212 "}
 .pick{font:inherit;text-align:left;color:var(--tallow);background:var(--panel);border:1px solid var(--line);padding:16px;cursor:pointer;display:flex;flex-direction:column;gap:6px;transition:border-color .2s, background .2s}
 .pick:hover{border-color:var(--ember);background:color-mix(in srgb, var(--panel) 85%, var(--ember))}
 .pick:focus-visible{outline:2px solid var(--ember);outline-offset:2px}
-.pick .role{font-family:var(--f-record);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ember)}
-.pick .who{font-family:var(--f-display);font-size:24px;line-height:1.15}
-.pick .blurb{font-size:14.5px;line-height:1.5;color:var(--dim);flex:1}
-.pick .count{font-family:var(--f-record);font-size:12px;color:var(--dim);border-top:1px solid var(--line);padding-top:8px}
+.pick .role{font-family:var(--f-record);font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ember)}
+.pick .who{font-family:var(--f-display);font-size:27px;line-height:1.15}
+.pick .blurb{font-size:16px;line-height:1.5;color:var(--dim);flex:1}
+.pick .count{font-family:var(--f-record);font-size:13.5px;color:var(--dim);border-top:1px solid var(--line);padding-top:8px}
 @media (max-width:620px){.cast{grid-template-columns:1fr}}
-.found{font-family:var(--f-record);font-size:13px;color:var(--dim);margin-top:16px}
-.btn{font-family:var(--f-caps);font-size:18px;background:var(--ember);color:var(--night);border:0;padding:12px 22px;cursor:pointer;margin-top:22px}
+.found{font-family:var(--f-record);font-size:14.5px;color:var(--dim);margin-top:16px}
+.btn{font-family:var(--f-caps);font-size:20px;background:var(--ember);color:var(--night);border:0;padding:12px 22px;cursor:pointer;margin-top:22px}
 .btn.ghost{background:transparent;color:var(--tallow);border:1px solid var(--line)}
 .row{display:flex;flex-wrap:wrap;gap:10px}
 
-.ending .seal{font-family:var(--f-record);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--blood)}
+.ending .seal{font-family:var(--f-record);font-size:14.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--blood)}
 .verdict{margin-top:24px;padding:16px;border-left:3px solid var(--ember);background:var(--panel);font-style:italic}
 .block{margin-top:30px}
 .block ol,.block ul{margin:8px 0 0;padding-left:22px;display:flex;flex-direction:column;gap:6px}
-.path li{font-size:15px}
-.path li span{font-family:var(--f-record);font-size:12px;color:var(--dim);margin-right:6px}
-.after p{font-family:var(--f-record);font-size:14px;line-height:1.6;margin:8px 0 0}
-textarea#copybox{width:100%;min-height:120px;margin-top:10px;background:var(--panel);color:var(--tallow);border:1px solid var(--line);font-family:var(--f-record);font-size:13px;padding:10px}
-.note{font-family:var(--f-record);font-size:13px;color:var(--moss);min-height:1.2em;margin-top:8px}
+.path li{font-size:16.5px}
+.path li span{font-family:var(--f-record);font-size:13.5px;color:var(--dim);margin-right:6px}
+.after p{font-family:var(--f-record);font-size:16px;line-height:1.6;margin:8px 0 0}
+textarea#copybox{width:100%;min-height:120px;margin-top:10px;background:var(--panel);color:var(--tallow);border:1px solid var(--line);font-family:var(--f-record);font-size:14.5px;padding:10px}
+.note{font-family:var(--f-record);font-size:14.5px;color:var(--moss);min-height:1.2em;margin-top:8px}
+.vw{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:help;border-bottom:1.5px dotted var(--ember);line-height:inherit;text-align:inherit}
+.vw:hover{color:var(--ember)}
+.vw:focus-visible,.chip:focus-visible,.tlink:focus-visible{outline:2px solid var(--ember);outline-offset:2px}
+#vpop{position:fixed;left:16px;right:16px;bottom:16px;margin:0 auto;max-width:640px;z-index:20;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--ember);padding:12px 16px;box-shadow:0 10px 30px rgba(0,0,0,.55);animation:rise .25s ease both}
+#vpop h3{font-family:var(--f-caps);font-weight:400;font-size:21px;margin:0 0 4px;color:var(--ember);display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+#vpop h3 button{font-family:var(--f-record);font-size:14.5px;background:none;border:0;color:var(--dim);cursor:pointer}
+#vpop p{margin:0;font-size:17.5px;line-height:1.55}
+.lens{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:24px}
+.lens-k{font-family:var(--f-record);font-size:14.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--moss);margin-right:2px}
+.chip{font-family:var(--f-caps);font-size:17.5px;color:var(--tallow);background:transparent;border:1px solid var(--moss);border-radius:999px;padding:3px 12px;cursor:pointer}
+.chip:hover,.chip[aria-expanded="true"]{background:var(--moss);color:var(--night)}
+.lensbox{margin-top:10px;border:1px solid var(--line);border-left:3px solid var(--moss);background:var(--panel);padding:12px 14px;display:grid;gap:6px;animation:rise .3s ease both}
+.lensbox p{margin:0;font-size:17px;line-height:1.55}
+.lensbox .def{color:var(--dim)} .lensbox .def b{color:var(--moss);font-weight:500}
+.y1953{margin-top:16px;border-top:1px dashed var(--line);padding-top:12px}
+.y1953 h3{font-family:var(--f-caps);font-weight:400;font-size:17.5px;margin:0 0 6px;color:var(--blood)}
+.y1953 p{margin:0;font-family:var(--f-record);font-size:16px;line-height:1.55}
+.acts span.lock{opacity:.4;text-decoration:line-through}
+.tlink{font-family:var(--f-record);font-size:14.5px;color:var(--dim);background:none;border:0;border-bottom:1px dotted var(--dim);padding:0;cursor:pointer;margin-top:18px}
+.tcfg{font-family:var(--f-record);font-size:14.5px;color:var(--ember);border:1px solid var(--ember);padding:6px 10px;margin:14px 0 0}
+#tpanel{margin-top:18px;padding:18px;border:1px solid var(--line);border-left:3px solid var(--ember);background:var(--panel);display:grid;gap:12px}
+#tpanel p{margin:0;font-size:16.5px}
+#tpanel label{display:grid;gap:4px;font-size:16.5px}
+#tpanel label.tick{display:flex;gap:10px;align-items:flex-start}
+#tpanel input[type=checkbox]{margin-top:5px;accent-color:var(--ember);width:16px;height:16px;flex:none}
+#tpanel select,.tlinkbox{font:inherit;font-size:16.5px;background:var(--night);color:var(--tallow);border:1px solid var(--line);padding:6px 8px;max-width:100%}
+.tlinkbox{width:100%;font-family:var(--f-record);font-size:14.5px}
+#tpanel .btn{margin-top:0}
+#tpanel .small{font-size:14.5px;color:var(--dim)}
+.exhibit .pov{font-style:italic;color:var(--tallow);border-bottom:1px dashed var(--line);padding-bottom:8px;margin-bottom:4px}
+.exhibit .pov span,.exhibit .hist{display:block;font-style:normal;font-family:var(--f-record);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ember);margin-bottom:2px}
+.exhibit .hist{color:var(--dim)}
+.choice:disabled{opacity:.38!important;cursor:not-allowed}
+.choice:disabled::before{content:"\1F512";font-size:14px;top:15px}
+.choice:disabled:hover{border-color:var(--line);background:var(--panel)}
+.gate{margin:26px 0 -12px;font-family:var(--f-record);font-size:14.5px;letter-spacing:.03em;color:var(--ember);border:1px dashed var(--ember);padding:10px 14px}
+.gate b{font-weight:400;color:var(--tallow)}
+.gate.done{color:var(--moss);border-color:var(--moss)}
 </style>
 
 <div class="wrap">
@@ -143,6 +182,7 @@ textarea#copybox{width:100%;min-height:120px;margin-top:10px;background:var(--pa
     </div>
   </header>
   <main id="stage"></main>
+  <div id="vpop" role="dialog" aria-live="polite" hidden></div>
 </div>
 
 <script>
@@ -176,8 +216,8 @@ a1_hale:{act:1, place:"Rev. Parris’s house, Salem Village", when:"The same aft
   s.f.threatened ? "Abigail catches your eye as she cries out a name. She is showing you what she can do." : "Parris looks relieved. The blame is moving away from his house.",
  ],
  choices:[
-  {t:"Stand up and say it: these are frightened children, and the town should send them home.", fx:{name:-5,con:10,fear:-10}, set:"spokeUp", go:"a2_home"},
-  {t:"Walk out. You have planting to do, and this is the minister’s mess.", fx:{con:-5,fear:10}, go:"a2_home"},
+  {t:"Stand up and say it: these are frightened children, and the town should send them home.", fx:{name:-5,con:10,fear:-10}, set:"spokeUp", go:"a1_land"},
+  {t:"Walk out. You have planting to do, and this is the minister’s mess.", fx:{con:-5,fear:10}, go:"a1_land"},
   {t:"Tell the whole room why Abigail has reason to lie: you and she were together last year.", fx:{name:-30,con:15,fear:-10}, go:"a1_confess"}
  ],
  record:{play:"Hale arrives as a confident expert. Tituba confesses under pressure, and the girls start naming names in the same scene.",
@@ -269,6 +309,7 @@ a3_court:{act:3, place:"The meetinghouse, Salem", when:"Court in session", title
 a3_giles:{act:3, place:"The meetinghouse, Salem", when:"Court in session", title:"Ninety-One Names",
  body:s=>[
   "You hand over a paper signed by ninety-one neighbors swearing that Rebecca, Martha, and Elizabeth are good women. Danforth reads it and orders warrants for every signer, so they can be questioned.",
+  s.f.signedEarly ? "Your own name is near the top. You signed it in your field eight days ago." : "",
   "Giles Corey is back, and Danforth wants the name of the man who told him about Putnam’s land scheme. Giles will not give it. He says he will not hand a neighbor over to be hanged. Danforth begins writing out a charge of contempt.",
   "Giles looks at you."
  ],
@@ -309,8 +350,8 @@ a3_bird:{act:3, place:"The meetinghouse, Salem", when:"Court in session", title:
   "Danforth asks if you have joined with the Devil. Across the room, Reverend Hale stands up, says he is finished with this court, and walks out the door."
  ],
  choices:[
-  {t:"Tell them God sees this room, and every person in it will answer for what was done here.", fx:{con:10,name:-5,fear:5}, go:"a4_cell"},
-  {t:"Say nothing. Hold out your wrists.", go:"a4_cell"}
+  {t:"Tell them God sees this room, and every person in it will answer for what was done here.", fx:{con:10,name:-5,fear:5}, go:"a4_rebecca"},
+  {t:"Say nothing. Hold out your wrists.", go:"a4_rebecca"}
  ],
  record:{play:"The girls’ performance turns Mary against Proctor, and he is arrested. Hale quits the court.",
   history:"The real trials leaned on spectral evidence: testimony that a person’s spirit had attacked someone, which the accused had no way to disprove. In October 1692, minister Increase Mather argued it would be better for ten suspected witches to go free than for one innocent person to die. On October 29, Governor Phips shut down the court."}},
@@ -348,6 +389,7 @@ a4_paper:{act:4, place:"Salem jail", when:"Sunrise", title:"The Paper",
  body:s=>[
   "Danforth has the clerk write it all down. Then he starts reading names. Did you see Rebecca Nurse with the Devil? Martha Corey? You say you saw no one. You speak only for yourself.",
   "Danforth lets that go. But he needs your signature. The confession will be posted on the church door, so the whole village knows John Proctor confessed.",
+  s.f.withRebecca ? "You think of the promise you made Rebecca Nurse in the dark." : (s.f.askedRebecca ? "You think of Rebecca Nurse, and the question she would not answer the way you hoped." : ""),
   "You sign. He reaches for the paper. Your hand is still on it."
  ],
  choices:[
@@ -438,8 +480,8 @@ m1_names:{act:1, place:"Rev. Parris’s house, Salem Village", when:"The same af
   "You have been a servant your whole life. Nobody has ever written down a word you said."
  ],
  choices:[
-  {t:"Cry out a name of your own. For the first time, the room turns to you.", fx:{name:15,con:-15,fear:10}, set:"joined", go:"m2_court"},
-  {t:"Stay at the back of the room and say nothing.", go:"m2_court"}
+  {t:"Cry out a name of your own. For the first time, the room turns to you.", fx:{name:15,con:-15,fear:10}, set:"joined", go:"m1_night"},
+  {t:"Stay at the back of the room and say nothing.", go:"m1_night"}
  ],
  record:{play:"Mary does not cry out in Act I, but by Act II she is an official of the court.",
   history:"The accusers were mostly girls and young women with very little power in Puritan society. Many historians point out that the trials gave them sudden attention and authority, which may help explain why the accusations kept coming."}},
@@ -451,22 +493,22 @@ m2_court:{act:2, place:"The meetinghouse, Salem", when:"A week later", title:"Go
   "The judges are waiting. Everyone is looking at the bench."
  ],
  choices:[
-  {t:"Testify that Goody Osburn sent her spirit to choke you.", fx:{name:10,con:-15,fear:10}, set:"testified", go:"m2_poppet"},
-  {t:"Say you are not sure. Maybe you were only hungry.", fx:{name:-10,con:10,fear:-5}, go:"m2_poppet"}
+  {t:"Testify that Goody Osburn sent her spirit to choke you.", fx:{name:10,con:-15,fear:10}, set:"testified", go:"m2_sewing"},
+  {t:"Say you are not sure. Maybe you were only hungry.", fx:{name:-10,con:10,fear:-5}, go:"m2_sewing"}
  ],
  record:{play:"Mary tells the Proctors she only “remembered” Osburn cursing her once the court started asking. Osburn is condemned to hang.",
   history:"Sarah Osburn was one of the first three women accused, along with Tituba and Sarah Good. She was poor, sickly, and unpopular. She died in jail in May 1692 before any trial."}},
 
 m2_poppet:{act:2, place:"The Proctor farm, Salem Farms", when:"That night", title:"The Poppet",
  body:s=>[
-  "To pass the long hours in court, you sewed a little rag doll. Abigail sat beside you while you worked, and when she handed it back, she had stuck your needle in its belly to keep it safe.",
+  s.f.keptNeedle ? "You kept your needle in your sleeve all afternoon. But on the walk home you find a second needle buried deep in the doll’s belly. You never put it there." : "Abigail tucked your needle into the doll’s belly to keep it safe, she said, and handed it back with a smile.",
   "Tonight you give the doll to Goody Proctor as a gift. Mr. Proctor is furious that you went to court against his orders. You tell him you saved his wife’s life today. Her name came up, and you spoke for her.",
   "Then Cheever arrives with a warrant. He finds the needle. Abigail, he says, fell at supper with a needle in her stomach and named Elizabeth’s spirit.",
   "Everyone turns to you. It is your doll."
  ],
  choices:[
-  {t:"Say it now: you made the doll, and Abigail sat beside you when the needle went in.", fx:{name:-10,con:15,fear:-5}, set:"toldNeedle", go:"m3_court"},
-  {t:"Say only that you made the doll. Leave Abigail out of it.", fx:{con:-10}, go:"m3_court"}
+  {t:"Say it now: you made the doll, and Abigail sat beside you when the needle went in.", fx:{name:-10,con:15,fear:-5}, set:"toldNeedle", go:"m3_before"},
+  {t:"Say only that you made the doll. Leave Abigail out of it.", fx:{con:-10}, go:"m3_before"}
  ],
  record:{play:"Mary admits the poppet is hers and that Abigail watched her put the needle in. It is not enough. Elizabeth is still arrested.",
   history:"Poppets, small dolls supposedly used to harm victims, were real evidence in 1692. Witnesses claimed poppets were found in the walls of Bridget Bishop’s old house, and that was used against her. She was the first person hanged, on June 10."}},
@@ -474,6 +516,7 @@ m2_poppet:{act:2, place:"The Proctor farm, Salem Farms", when:"That night", titl
 m3_court:{act:3, place:"The meetinghouse, Salem", when:"Court in session", title:"The Truth in Open Court",
  body:s=>[
   s.f.toldNeedle ? "What you said in the Proctors’ kitchen did not save Elizabeth. Mr. Proctor says this time you will say it under oath, in front of Danforth." : "Mr. Proctor marches you to Salem. You will tell them the girls are pretending, he says, or Elizabeth will hang.",
+  s.f.apologized ? "Abigail already knows you are weak. You told her so on the road." : "",
   "Deputy Governor Danforth reads your statement and turns cold. If you lied before, you lied under oath. Then he tells you to faint, right now, the way you did on the bench. You try. Without the girls and the crowd and the screaming, you cannot.",
   "Abigail stares at you. A cold wind is coming off you, she says. The girls shiver. Then they start repeating every word you say the moment you say it. Danforth is watching you, not them."
  ],
@@ -491,7 +534,7 @@ m3_hold:{act:3, place:"Salem jail", when:"Weeks later", title:"Arrested",
   "You are cold and hungry, and you have not slept in days."
  ],
  choices:[
-  {t:"Keep saying the same thing: nobody made you do anything. The girls are lying.", fx:{name:-10,con:15}, go:"e_m_truth"},
+  {t:"Keep saying the same thing: nobody made you do anything. The girls are lying.", fx:{name:-10,con:15}, go:"m3_eliz"},
   {t:"Give them what they want. Say Proctor forced you.", fx:{con:-25,fear:15}, go:"e_m_jailturn"}
  ],
  record:{play:"This scene is not in the play. Mary turns all at once, in the courtroom.",
@@ -570,8 +613,8 @@ h1_tituba:{act:1, place:"Rev. Parris’s house, Salem Village", when:"The same a
   "Everyone looks at you. You are the expert. They are waiting for you to tell them what this means."
  ],
  choices:[
-  {t:"Thank God out loud. The Devil is exposed, and you will send these names to the magistrates.", fx:{name:10,con:-5,fear:10}, go:"h2_proctor"},
-  {t:"Tell them no one should be arrested on a frightened child’s word alone.", fx:{name:-10,con:10,fear:-10}, set:"cautious", go:"h2_proctor"}
+  {t:"Thank God out loud. The Devil is exposed, and you will send these names to the magistrates.", fx:{name:10,con:-5,fear:10}, go:"h1_putnam"},
+  {t:"Tell them no one should be arrested on a frightened child’s word alone.", fx:{name:-10,con:10,fear:-10}, set:"cautious", go:"h1_putnam"}
  ],
  record:{play:"Hale leads Tituba’s questioning and welcomes the girls’ accusations as a breakthrough.",
   history:"Tituba confessed in early March 1692. She later said Parris beat her to force the confession. Her detailed story about the Devil and his followers made the panic feel real to the adults of Salem."}},
@@ -584,8 +627,8 @@ h2_proctor:{act:2, place:"The Proctor farm, Salem Farms", when:"Eight days later
   "Before you can answer, Cheever arrives with a warrant for Elizabeth and finds a needle in a rag doll."
  ],
  choices:[
-  {t:"Tell Proctor to bring Abigail’s words to court, and promise to stand behind him.", fx:{name:-5,con:10}, set:"backed", go:"h3_court"},
-  {t:"Assure them the court is just. If Elizabeth is innocent, she has nothing to fear.", fx:{name:5,con:-5,fear:5}, go:"h3_court"}
+  {t:"Tell Proctor to bring Abigail’s words to court, and promise to stand behind him.", fx:{name:-5,con:10}, set:"backed", go:"h3_warrants"},
+  {t:"Assure them the court is just. If Elizabeth is innocent, she has nothing to fear.", fx:{name:5,con:-5,fear:5}, go:"h3_warrants"}
  ],
  record:{play:"Hale visits the Proctors on his own, tests their faith, and is troubled by what Proctor tells him. He still tells them to trust the court.",
   history:"Rebecca Nurse was arrested on March 24, 1692. Her arrest alarmed many people, because she was known as one of the most devout women in the village. A jury first found her not guilty. The judges asked the jury to reconsider, and she was convicted."}},
@@ -597,7 +640,7 @@ h3_court:{act:3, place:"The meetinghouse, Salem", when:"Court in session", title
   "Then Abigail screams at a yellow bird in the rafters, and Mary Warren breaks and points at Proctor. Danforth orders his arrest. Everything you started at Parris’s house is now aimed at innocent people."
  ],
  choices:[
-  {t:"Stand up, denounce these proceedings, and walk out of the court.", fx:{name:-20,con:15}, go:"h4_jail"},
+  {t:"Stand up, denounce these proceedings, and walk out of the court.", fx:{name:-20,con:15}, go:"h4_parris"},
   {t:"Stay. If you leave, no one in this room will speak for reason.", fx:{name:10,con:-15,fear:10}, go:"e_h_inside"}
  ],
  record:{play:"Hale denounces the court and quits after Proctor is arrested.",
@@ -606,6 +649,8 @@ h3_court:{act:3, place:"The meetinghouse, Salem", when:"Court in session", title
 h4_jail:{act:4, place:"Salem jail", when:"Autumn 1692, before dawn", title:"Lie and Live",
  body:s=>[
   "You have come back to Salem to do a terrible thing. You go cell to cell, begging the condemned to confess to crimes they did not commit, because a lie is better than a hanging. You tell yourself this is mercy.",
+  s.f.askedDelay ? "Danforth refused the delay. Pardoning some now, after others have already hanged, would look like an admission that the court was wrong." : "",
+  s.f.signedNurse ? "Rebecca Nurse hangs today too, and the warrant has your name on it." : "",
   "Proctor is the last. He has been in chains for three months. Elizabeth is with him. Danforth waits outside with paper and ink.",
   "Proctor might listen to you. You are the one who brought the books to Salem."
  ],
@@ -654,6 +699,162 @@ e_h_book:{act:4, ending:true, title:"The Road to Boston", seal:"Ending: you went
  questions:["Hale changes his mind too late to save Proctor. Does that make it worthless?","What finally stopped the trials? What does that say about who has the power to end a panic?"]}
 });
 
+/* ---------------- ADDED SCENES ---------------- */
+Object.assign(S,{
+a1_land:{act:1, place:"The road home, Salem Village", when:"That evening", title:"Whose Land",
+ body:s=>[
+  "On the road home, Thomas Putnam falls in beside your cart. He is the richest man in the village, and he wants everyone to know it. He looks over the timber you are hauling. That wood, he says, came off land his grandfather owned.",
+  "You bought that land fairly from Francis Nurse, and you tell him so. Putnam smiles. These are strange times, he says. A man should be careful whose land he takes.",
+  "When Putnam rides on, old Giles Corey catches up to you, out of breath. Putnam has been suing half the village for years, Giles says, and Giles should know, because he has been in court more than any man in Salem.",
+  "Then Giles lowers his voice. Ann Putnam has buried seven babies. Now she is sure someone in this village killed them with witchcraft."
+ ],
+ choices:[
+  {t:"Tell Putnam the land is yours by deed, and he can take it to court if he likes.", fx:{name:5,fear:5}, set:"crossedPutnam", go:"a2_fields"},
+  {t:"Offer Putnam a share of the timber to keep the peace.", fx:{name:5,con:-5}, go:"a2_fields"},
+  {t:"Tell Giles that a man who sees witches behind every dead child is a danger to the whole village.", fx:{name:-5,con:5}, set:"warnedGiles", go:"a2_fields"}
+ ],
+ record:{play:"In Act I, Proctor and Putnam argue over lumber and land, and Giles Corey jokes about how often he has been sued. Ann Putnam has lost seven babies and blames witchcraft.",
+  history:"Land quarrels were real. The Putnam family had long-running rivalries with other families in Salem Village, and many historians think old disputes over land and church leadership shaped who was accused. Thomas Putnam filed or supported complaints against dozens of people. Child deaths were common in 1692, and grieving families sometimes looked for someone to blame."}},
+
+a2_fields:{act:2, place:"The Proctor farm, Salem Farms", when:"Eight days later, morning", title:"Francis Nurse",
+ body:s=>[
+  "You are plowing the south field when Francis Nurse comes across the furrows with his hat in his hands. He is old and steady, one of the few men Putnam has never managed to frighten.",
+  s.f.crossedPutnam ? "Putnam has been telling people you stole his timber, Francis says. In a season like this, talk like that is dangerous." : (s.f.warnedGiles ? "Giles has been repeating what you said about the Putnams to anyone who will listen. Francis thought you should know." : ""),
+  "Then he tells you why he came. Rebecca’s name was spoken in court yesterday. She has not been charged, not yet, but her name was spoken. Francis wants neighbors to sign a paper swearing she is a good woman, and he wants your name first, because people respect you.",
+  "You notice that Mary Warren did not come out to the fields this morning. She went to Salem again."
+ ],
+ choices:[
+  {t:"Sign it now, and promise to carry it to the neighbors along your road.", fx:{name:-5,con:10}, set:"signedEarly", go:"a2_home"},
+  {t:"Tell him to wait. A paper like that could make the court angrier.", fx:{con:-5,fear:5}, go:"a2_home"}
+ ],
+ record:{play:"Francis Nurse appears in Act II to tell Proctor that Rebecca has been arrested, and in Act III he brings the neighbors’ petition to court.",
+  history:"Francis Nurse was real, a respected farmer and Rebecca’s husband. After Rebecca was accused in March 1692, 39 neighbors signed a petition saying they had never seen her do anything wrong. It did not save her."}},
+
+a4_rebecca:{act:4, place:"Salem jail", when:"Summer 1692", title:"Rebecca",
+ body:s=>[
+  "The jail is dark and crowded and smells of the river. They chain you near an old woman you know at once: Rebecca Nurse, seventy-one, with a Bible in her lap that she can barely see to read.",
+  "The jury found her not guilty, she tells you. Then the judges asked them to think again, and they changed their minds. The church she attended her whole life has cast her out. She is not angry, she says. She is only tired.",
+  "Across the cell, a woman who confessed is eating better food than either of you. The jailer says people who confess may live. Rebecca watches you take that in.",
+  "She cannot say she served the Devil, she tells you. It would be damning her own soul to save her body."
+ ],
+ choices:[
+  {t:"Tell her you will stand with her, whatever comes.", fx:{con:10}, set:"withRebecca", go:"a4_cell"},
+  {t:"Ask her whether a lie told to stay alive is really such a sin.", fx:{con:-5}, set:"askedRebecca", go:"a4_cell"}
+ ],
+ record:{play:"Rebecca Nurse appears in Act IV on her way to the gallows, still refusing to confess. Her calm courage helps Proctor make his final choice.",
+  history:"Rebecca Nurse really was found not guilty at first. After the accusers cried out in the courtroom, the judges asked the jury to reconsider, and the jury convicted her. She was cast out of the Salem Town church and hanged on July 19, 1692. In 1712 the church reversed that decision."}},
+
+m1_night:{act:1, place:"The Proctor farm, Salem Farms", when:"That night", title:"Goody Proctor",
+ body:s=>[
+  "It is dark when you get back to the Proctor farm. Mr. Proctor is out in the barn. Goody Proctor sits by the fire, mending, and she does not scold you for going. She only asks what happened at the minister’s house.",
+  s.f.joined ? "Your face goes hot. You cried out a name today, and the whole room listened. You have not decided yet whether you are proud or ashamed." : "You think of the girls calling out names while you stood at the back of the room and said nothing.",
+  "Goody Proctor sets down her mending. Was Abigail Williams there? she asks. Her voice is very even, the way it always is when she says Abigail’s name."
+ ],
+ choices:[
+  {t:"Tell her everything: the dancing, Abigail’s threat, the names.", fx:{con:10,fear:-5}, set:"toldEliz", go:"m2_court"},
+  {t:"Say you saw nothing, and go up to bed.", fx:{con:-5}, go:"m2_court"},
+  {t:"Tell her Abigail is the most important girl in Salem now.", fx:{name:5,fear:5}, set:"praisedAbby", go:"m2_court"}
+ ],
+ record:{play:"In Act II, Mary comes home from court and stands up to the Proctors for the first time. The play never shows her alone with Elizabeth before that.",
+  history:"Mary Warren lived and worked in the Proctor household. Servants in Puritan homes were often teenagers or young adults with no land of their own, and they had very little control over their own lives."}},
+
+m2_sewing:{act:2, place:"The meetinghouse, Salem", when:"Later that day", title:"The Needle",
+ body:s=>[
+  "The examinations go on for hours. To pass the time, you take out the scraps of cloth you brought and start to sew a little rag doll, a poppet, as a gift for Goody Proctor.",
+  s.f.testified ? "You testified this morning, and Abigail has been sweet to you ever since." : "You did not help this morning, and Abigail has not forgotten. Her smile does not reach her eyes.",
+  "Abigail slides onto the bench beside you. She admires the doll and turns it over in her hands. Then she asks to see your needle. Where will you keep it, she wonders, so you don’t lose it?"
+ ],
+ choices:[
+  {t:"Let her tuck the needle into the doll for safekeeping.", fx:{fear:5}, go:"m2_poppet"},
+  {t:"Take the doll back and keep the needle in your sleeve.", fx:{con:5}, set:"keptNeedle", go:"m2_poppet"}
+ ],
+ record:{play:"Mary sews the poppet in court. She tells the Proctors she stuck the needle in it to keep it safe, and that Abigail sat beside her while she worked.",
+  history:"The needle is Miller’s detail, but accusers in 1692 did produce objects as proof. During Sarah Good’s trial, an accuser showed a broken knife blade and said Good’s spirit had stabbed her with it. A young man stood up and said the blade was from his own knife, which he had broken the day before. The judges warned the girl not to lie and kept using her testimony."}},
+
+m3_before:{act:3, place:"The road to Salem", when:"Morning", title:"On the Road",
+ body:s=>[
+  "Mr. Proctor drives the cart himself, and he keeps one hand on your arm the whole way. He makes you say it again and again: the girls are pretending, and you were pretending too.",
+  "At the edge of Salem, Abigail is waiting by the road with Mercy Lewis. Mr. Proctor tells them to stand aside. Abigail ignores him. She looks only at you. She does not say a word. She does not need to.",
+  "Mercy falls in behind the cart and walks the rest of the way into town, close enough that you can hear her breathing."
+ ],
+ choices:[
+  {t:"Hold on to Mr. Proctor’s sleeve and keep your eyes on the road.", fx:{con:5}, go:"m3_court"},
+  {t:"Whisper to Abigail that you are sorry. He is making you do this.", fx:{con:-10,fear:5}, set:"apologized", go:"m3_court"}
+ ],
+ record:{play:"Proctor brings Mary to court in Act III. Abigail and the other girls are already there when she arrives.",
+  history:"The accusers often traveled together to examinations, and they tended to have fits as a group when an accused person looked at them. Acting as one was part of what made them so convincing to the judges."}},
+
+m3_eliz:{act:3, place:"Salem jail", when:"Midsummer", title:"Elizabeth in the Dark",
+ body:s=>[
+  "They move you into a cell with Goody Proctor. She is pregnant now, and thin, and for a long time neither of you says a word.",
+  s.f.toldEliz ? "Then she reminds you of the night you told her everything by her fire. You were brave once, she says. You can be brave again." : "Then she says your name quietly, the way she used to at home when she wanted help with the bread.",
+  "She does not tell you what to do. She only asks if you are eating, and she gives you half of her bread.",
+  "In the morning the magistrates are back. One more time, they say. Just say John Proctor made you sign."
+ ],
+ choices:[
+  {t:"Keep your story. Nobody made you do anything. The girls are lying.", fx:{con:10}, go:"e_m_truth"},
+  {t:"You are so tired. Tell them what they want.", fx:{con:-20,fear:15}, go:"e_m_jailturn"}
+ ],
+ record:{play:"This scene is not in the play. Mary and Elizabeth never speak alone.",
+  history:"Elizabeth Proctor was in jail during the summer of 1692 while pregnant. The jails were crowded and cold, and prisoners or their families had to pay for their own food and even their chains. Mary Warren was jailed in the same period, but there is no record of the two sharing a cell."}},
+
+h1_putnam:{act:1, place:"Rev. Parris’s house, Salem Village", when:"That evening", title:"The Putnams",
+ body:s=>[
+  "When the girls have finally been put to bed, Thomas and Ann Putnam ask to speak with you alone.",
+  "Ann Putnam has buried seven babies, she says, none of them older than a day. Only her daughter Ruth lived, and now Ruth is sick like Betty. Someone in this village, she says, has been murdering her children.",
+  "Thomas Putnam lays a list on the table. It names neighbors who have quarreled with his family, he says, so you know where to begin.",
+  s.f.cautious ? "You remember what you told the room: no one should be arrested on a frightened child’s word. This is not a child’s word. It is a grieving mother’s." : "The list is long. Some of the names are the same ones the girls cried out today."
+ ],
+ choices:[
+  {t:"Take the list. A grieving mother deserves answers, and the girls already named some of these people.", fx:{name:10,con:-10,fear:10}, set:"tookList", go:"h2_court"},
+  {t:"Comfort Ann Putnam, but hand back the list. A quarrel over land is not evidence.", fx:{name:-10,con:10,fear:-5}, go:"h2_court"}
+ ],
+ record:{play:"In Act I, Ann Putnam blames witchcraft for the deaths of her seven babies, and Thomas Putnam is eager to see others accused.",
+  history:"Thomas Putnam and his daughter Ann Jr. were at the center of the accusations. Thomas wrote down or signed many of the statements that led to arrests, and many of the accused came from families the Putnams had quarreled with over land and church politics."}},
+
+h2_court:{act:2, place:"The meetinghouse, Salem", when:"A week later", title:"The Examinations",
+ body:s=>[
+  "The meetinghouse is packed to the walls. People have walked in from three towns to watch. The girls sit on the front bench, and with them now is Mary Warren, the Proctors’ servant, who has never been noticed in her life.",
+  "Old Sarah Good is brought in, ragged and angry. When she looks at the bench, the girls scream and twist. The magistrate does not ask whether she hurt them. He asks her why she does it.",
+  s.f.tookList ? "Thomas Putnam catches your eye and nods. Several names from his list have been read out this week." : "",
+  "Then a name is spoken that silences the room: Rebecca Nurse."
+ ],
+ choices:[
+  {t:"Ask the magistrate to let Sarah Good answer before the girls do.", fx:{name:-5,con:10,fear:-5}, set:"spokeCourt", go:"h2_proctor"},
+  {t:"Write down the girls’ testimony carefully. This is what you came here for.", fx:{name:5,con:-5,fear:10}, go:"h2_proctor"}
+ ],
+ record:{play:"Miller does not show the early examinations onstage. Mary describes them to the Proctors in Act II, including Sarah Good’s case.",
+  history:"The records show that magistrate John Hathorne asked Sarah Good why she hurt the children, not whether she did. Sarah Good was hanged on July 19, 1692. Her daughter Dorothy, only about four years old, was jailed too."}},
+
+h3_warrants:{act:3, place:"The meetinghouse, Salem", when:"Before court opens", title:"Seventy-Two Names",
+ body:s=>[
+  "Before court opens, Deputy Governor Danforth sets a stack of papers in front of you. They are death warrants. The court has condemned these people, and your signature as a minister will show the colony that the church agrees.",
+  "You have signed papers like these before. Seventy-two of them. You told yourself every one was proven.",
+  s.f.spokeCourt ? "Danforth mentions, lightly, that some people say you have gone soft since Sarah Good’s examination." : "",
+  "Rebecca Nurse’s warrant is near the top of the stack."
+ ],
+ choices:[
+  {t:"Sign. The court has ruled, and it is not your place to overturn it.", fx:{name:10,con:-15,fear:10}, set:"signedNurse", go:"h3_court"},
+  {t:"Refuse to sign Rebecca’s. Tell Danforth you must see the evidence for yourself.", fx:{name:-10,con:10}, go:"h3_court"}
+ ],
+ record:{play:"In Act III, Hale tells Danforth he has signed seventy-two death warrants and will not sign another without solid proof.",
+  history:"In reality, ministers did not sign death warrants. Chief Judge William Stoughton signed them. But ministers did advise the court. In June 1692, a group of ministers warned the judges to be careful with spectral evidence, and in the same letter urged them to keep the trials going."}},
+
+h4_parris:{act:4, place:"Salem jail", when:"Autumn 1692, night", title:"Parris",
+ body:s=>[
+  "Reverend Parris finds you in the jail yard after dark. His hands are shaking. Abigail is gone, he says. She and Mercy Lewis slipped away in the night, and his money box went with them.",
+  "Worse, the people of Andover have turned against the court, and someone here left a dagger stuck in his door. If John Proctor and Rebecca Nurse hang tomorrow, he is afraid the whole village will rise against him.",
+  "He wants you to come with him and beg Danforth to delay the hangings, just until Proctor confesses.",
+  s.f.signedNurse ? "Rebecca Nurse’s warrant still has your name on it. You think about it every night." : ""
+ ],
+ choices:[
+  {t:"Go with Parris to Danforth and ask for a delay.", fx:{con:5,fear:-5}, set:"askedDelay", go:"h4_jail"},
+  {t:"Tell Parris he is only afraid for himself, and leave him in the yard.", fx:{name:-5,con:5}, go:"h4_jail"}
+ ],
+ record:{play:"In Act IV, Parris reports that Abigail stole his money and ran away, and that he found a dagger in his door. He begs Danforth to postpone the hangings.",
+  history:"The real Samuel Parris stayed in Salem Village for several more years. Families who had lost relatives in the trials pushed to remove him, and he finally left around 1697 after a long fight over his pay and his house."}}
+});
+
 /* ---------- portraits ---------- */
 CHARS.proctor.svg=`<svg viewBox="0 0 60 60" aria-hidden="true"><path fill="currentColor" d="M6 60 Q8 40 30 38 Q52 40 54 60Z"/><circle cx="30" cy="27" r="9" fill="currentColor"/><ellipse cx="30" cy="19" rx="17" ry="3" fill="currentColor"/><rect x="21" y="7" width="18" height="12" rx="2" fill="currentColor"/></svg>`;
 CHARS.mary.svg=`<svg viewBox="0 0 60 60" aria-hidden="true"><path fill="currentColor" d="M8 60 Q10 41 30 39 Q50 41 52 60Z"/><circle cx="30" cy="27" r="9" fill="currentColor"/><path fill="var(--tallow)" d="M19 31 Q18 14 30 13 Q42 14 41 31 L38 31 Q38 19 30 19 Q22 19 22 31Z"/><path fill="var(--tallow)" d="M21 44 L30 51 L39 44 Q30 41 21 44Z"/></svg>`;
@@ -678,28 +879,160 @@ function artType(id,sc){
 /* ---------- things to examine in each picture ---------- */
 const HS={
  parris:[
-  {x:.27,y:.66,t:"Betty’s bed",d:"The village doctor, William Griggs, examined the girls and reportedly said they were under an “evil hand.” A doctor’s word turned an illness nobody understood into a crime."},
-  {x:.6,y:.6,t:"The books",d:"Books about witchcraft were widely read. Cotton Mather’s Memorable Providences (1689) described Boston children whose fits looked a lot like Betty’s. Educated people in Massachusetts knew the story well."},
-  {x:.745,y:.35,t:"The window",d:"In February 1692, a neighbor named Mary Sibley had Tituba and her husband, John Indian, bake a “witch cake” using the girls’ urine and feed it to a dog. It was an English folk test for witchcraft. Parris scolded Sibley in church, and the first accusations came soon after."}],
+  {x:.27,y:.66,t:"Betty’s bed",d:"The village doctor, William Griggs, examined the girls and reportedly said they were under an “evil hand.” A doctor’s word turned an illness nobody understood into a crime.",
+   by:{proctor:"A sick child and a room full of frightened adults. You have seen fevers before. You have never seen a village this eager to call one witchcraft.",
+       mary:"You know Betty is not bewitched. You were in the woods. The question is whether you will ever say so.",
+       hale:"Her stillness interests you. Your books describe exactly this. You feel a scholar’s thrill, then a flicker of shame at feeling it."}},
+  {x:.6,y:.6,t:"The books",d:"Books about witchcraft were widely read. Cotton Mather’s Memorable Providences (1689) described Boston children whose fits looked a lot like Betty’s. Educated people in Massachusetts knew the story well.",
+   by:{proctor:"Heavy books for a farmer’s eye. You trust a plowed field more than a page.",
+       mary:"You cannot read most of these words. That is part of why the girls’ word matters more than yours.",
+       hale:"These are your books. You marked the passages on the ride over. Every symptom has a chapter."}},
+  {x:.745,y:.35,t:"The window",d:"In February 1692, a neighbor named Mary Sibley had Tituba and her husband, John Indian, bake a “witch cake” using the girls’ urine and feed it to a dog. It was an English folk test for witchcraft. Parris scolded Sibley in church, and the first accusations came soon after.",
+   by:{proctor:"Through the glass you can see your horse tied at the fence. You could leave right now.",
+       mary:"The woods are out there, black against the moon. You keep looking for the place where the fire was.",
+       hale:"Moonlight on the glass. They say witches fly on nights like this. You make a note to ask Tituba."}},
+  {x:.53,y:.56,t:"The candle",d:"Much of the 1692 testimony describes specters appearing at night, by candlelight or in bed in the dark. In a world without electric light, the night really was a frightening place.",
+   by:{proctor:"A good wax candle, burning in daylight hours. Parris always did like his comforts.",
+       mary:"The flame jumps every time someone on the stairs speaks. You flinch with it.",
+       hale:"You read by this candle late into the night, searching for the signs you were sure you would find."}},
+  {x:.9,y:.56,t:"The doorway",d:"Neighbors crowded into the Parris house to see the girls. Downstairs in the kitchen worked Tituba, an enslaved woman in the household, who would be among the first three accused.",
+   by:{proctor:"Half the village is packed on those stairs. Some came to pray. Most came to watch.",
+       mary:"Every face on the stairs turns toward the girls. Nobody has ever looked at a servant like that.",
+       hale:"Downstairs, Tituba waits. You have already decided she is where the answers start."}}],
  farm:[
-  {x:.21,y:.62,t:"The lit window",d:"Elizabeth Proctor’s grandmother, Ann Burt, had been accused of witchcraft years earlier. Old rumors like that followed families and made them easier targets in 1692."},
-  {x:.62,y:.8,t:"The fields",d:"The real John Proctor leased a large farm south of Salem Village and kept a tavern on the road to Ipswich. He was a prosperous, outspoken man of about sixty."}],
+  {x:.21,y:.62,t:"The lit window",d:"Elizabeth Proctor’s grandmother, Ann Burt, had been accused of witchcraft years earlier. Old rumors like that followed families and made them easier targets in 1692.",
+   by:{proctor:"Elizabeth keeps the lamp lit until you come in. Lately you are not sure whether that is love or watching.",
+       mary:"Goody Proctor is still up. She always waits. You hope she will not ask where you have been.",
+       hale:"A plain farmhouse with one lamp. The woman inside may not live out the summer, and you are the one who wrote her name down."}},
+  {x:.62,y:.8,t:"The fields",d:"The real John Proctor leased a large farm south of Salem Village and kept a tavern on the road to Ipswich. He was a prosperous, outspoken man of about sixty.",
+   by:{proctor:"Your sweat is in every furrow. A man who works this land should not have to beg a court for his good name.",
+       mary:"You are supposed to be out here working. Instead you were in court, and everyone treated you like someone important.",
+       hale:"Good, honest farmland. Proctor works hard, at least. That should count for something. You are no longer sure it does."}},
+  {x:.86,y:.36,t:"The old tree",d:"Puritans saw the wilderness as the Devil’s country. Many confessions in 1692 described witches meeting in the woods and fields at night, away from the church and the village.",
+   by:{proctor:"That tree was dead when you bought the land. You keep meaning to cut it down.",
+       mary:"In the dark, its branches look like hands. You walk faster.",
+       hale:"Confessors describe meetings under trees like this one. You find yourself studying it longer than you should."}},
+  {x:.82,y:.2,t:"The moon",d:"Several accusers claimed the witches held a meeting in a pasture near Parris’s house, with a false communion of red bread and blood. The story spread quickly and made the danger feel organized.",
+   by:{proctor:"A full moon means good light for the morning’s work. That is all a moon has ever meant to you.",
+       mary:"Abigail says the witches meet under a full moon. She says it so often you are starting to believe her.",
+       hale:"The girls say the witches gather by moonlight. You wrote it down as if it were a fact."}},
+  {x:.29,y:.38,t:"The chimney",d:"Puritan homes centered on the hearth. Elizabeth ran the household: cooking, spinning, brewing, and raising the children. John Proctor had children from three marriages, and Elizabeth was his third wife.",
+   by:{proctor:"The smoke is thin tonight. Elizabeth is keeping a small fire. A cold house, in every way.",
+       mary:"There is bread rising by that fire, and you were supposed to knead it.",
+       hale:"Smoke from the chimney means a home, with children asleep inside. You try not to think about that."}},
+  {x:.3,y:.9,t:"The fence",d:"Land meant everything in Salem Village. Families sued each other over boundaries and timber for years, and old property quarrels show up again and again in the 1692 accusations.",
+   by:{proctor:"Every rail is on the right side of your line. Putnam can say what he likes.",
+       mary:"Mr. Proctor mended this fence himself. He does everything himself. He would never understand being afraid.",
+       hale:"So many of the complaints on your desk began as quarrels over fences. You wonder now what a fence has to do with the Devil."}}],
  court:[
-  {x:.3,y:.1,t:"The rafters",d:"Spectral evidence was testimony that a person’s spirit, or specter, had attacked someone. Only the afflicted could see it, so the accused had no way to prove where their spirit had been."},
-  {x:.12,y:.84,t:"The girls’ bench",d:"The afflicted girls sat up front. When an accused person bit their lip or moved their hands, the girls cried out in pain or copied the movement, and the judges treated that as proof."},
-  {x:.5,y:.54,t:"The judges’ table",d:"In the touch test, an accused person touched a girl having a fit. If the fit stopped, the court said the evil power had flowed back into the witch."}],
+  {x:.3,y:.1,t:"The rafters",d:"Spectral evidence was testimony that a person’s spirit, or specter, had attacked someone. Only the afflicted could see it, so the accused had no way to prove where their spirit had been.",
+   by:{proctor:"Just wood and shadow. How do you prove there is nothing up there?",
+       mary:"You know there is no bird. But when the girls all look up at once, your eyes go up too.",
+       hale:"You were trained to see the invisible world. Up there you see only beams, and that frightens you more than any bird."}},
+  {x:.12,y:.84,t:"The girls’ bench",d:"The afflicted girls sat up front. When an accused person bit their lip or moved their hands, the girls cried out in pain or copied the movement, and the judges treated that as proof.",
+   by:{proctor:"Abigail sits in the middle like a queen. The rest of them watch her before they scream.",
+       mary:"Your place on the bench. It is warm from the girls on either side. Leaving it would mean leaving them.",
+       hale:"You once called these girls a gift from God. Now you watch how they look at Abigail before every fit."}},
+  {x:.5,y:.54,t:"The judges’ table",d:"In the touch test, an accused person touched a girl having a fit. If the fit stopped, the court said the evil power had flowed back into the witch.",
+   by:{proctor:"Paper, ink, and a stack of warrants. The whole village fits on that table now.",
+       mary:"Your sworn statement is on that table. Your name is at the bottom in shaky letters.",
+       hale:"You have sat at that table. You know how easy it is to believe the paper in front of you."}},
+  {x:.2,y:.28,t:"The windows",d:"The examinations were public. Crowds packed the meetinghouse, and people pressed against the windows outside to watch.",
+   by:{proctor:"Faces at the glass. Everyone wants to see the farmer brought low.",
+       mary:"People are watching you through the glass. Last month nobody knew your name.",
+       hale:"Half of Essex County is watching. The court cannot afford to look wrong now."}},
+  {x:.62,y:.42,t:"The judges",d:"The Court of Oyer and Terminer was created in May 1692. None of its judges was a trained lawyer, and the accused were not allowed lawyers to defend them.",
+   by:{proctor:"Danforth never blinks. He has already decided what kind of man you are.",
+       mary:"Danforth is looking at you the way Mr. Proctor looks at a lame horse.",
+       hale:"You asked Danforth for a lawyer to argue the case. He looked at you as if you had asked for the Devil’s book."}},
+  {x:.7,y:.76,t:"The crowd",d:"Spectators sometimes joined in, crying out or shouting at the accused. Fear in the room made it very hard for anyone to speak up for a neighbor.",
+   by:{proctor:"You see men you have traded with for twenty years. None of them will meet your eye.",
+       mary:"Somewhere back there is Goody Osburn’s family. You do not look for them.",
+       hale:"Your own parishioners from Beverly are in this crowd. What will you preach to them on Sunday?"}}],
  jail:[
-  {x:.2,y:.5,t:"The chains",d:"Accused witches were chained because people believed it kept their spirits from escaping to attack the girls. Prisoners or their families had to pay for food, lodging, and even the chains."},
-  {x:.5,y:.17,t:"The window",d:"Sarah Good gave birth in jail, and her baby died there. Her daughter Dorothy, about four years old, was accused too and spent months in chains."}],
+  {x:.2,y:.5,t:"The chains",d:"Accused witches were chained because people believed it kept their spirits from escaping to attack the girls. Prisoners or their families had to pay for food, lodging, and even the chains.",
+   by:{proctor:"The iron has rubbed your wrists raw. The jailer will send your family the bill for it.",
+       mary:"They chained you so your spirit cannot fly out and bite the girls. You almost laughed, until you saw they meant it.",
+       hale:"You told yourself the chains were for the girls’ protection. Now you see an old woman who can barely lift her arms."}},
+  {x:.5,y:.17,t:"The window",d:"Sarah Good gave birth in jail, and her baby died there. Her daughter Dorothy, about four years old, was accused too and spent months in chains.",
+   by:{proctor:"A square of gray sky. You can tell the season by it. Summer is going.",
+       mary:"You can hear people walking past outside, free, talking about the weather.",
+       hale:"You can hear the carts from here. On hanging days, you count them."}},
+  {x:.72,y:.62,t:"The prisoner",d:"At least five accused people died in jail before they could be tried or freed, including Sarah Osburn in May 1692.",
+   by:{proctor:"She hasn’t moved in an hour. You call her name to make sure she is still breathing.",
+       mary:"You saw her examined in March, from the front bench. She does not seem to know you.",
+       hale:"She was on one of the lists you read. You remember her name. She does not remember yours."}},
+  {x:.4,y:.92,t:"The floor",d:"Jails were cold, damp, and crowded. Prisoners slept on straw or bare stone, and many fell sick over the long months of waiting.",
+   by:{proctor:"Damp straw and stone. You think of your own barn, and the cows are better kept.",
+       mary:"You sleep curled up to stay warm. In the morning your bones ache like an old woman’s.",
+       hale:"You kneel here to pray with the condemned, and the cold comes straight through your knees."}},
+  {x:.86,y:.3,t:"The stone wall",d:"Giles Corey wrote a will in jail leaving his property to two sons-in-law. Many people believe he refused to enter a plea partly so the court could not easily seize his land from his family.",
+   by:{proctor:"Someone has scratched marks into the stone, counting days. You stop counting after fifty.",
+       mary:"Someone scratched a cross into the stone. You trace it with your finger at night.",
+       hale:"Giles Corey sat against this wall. He never answered them, not once."}}],
  road:[
-  {x:.42,y:.86,t:"The road",d:"The panic spread far beyond Salem Village. People from more than twenty towns were accused, and Andover had more accused people than any other town."},
-  {x:.56,y:.54,t:"Toward Boston",d:"Many accused people were held in the Boston jail, where conditions were terrible. Sarah Osburn died there in May 1692, still waiting for a trial."}],
+  {x:.42,y:.86,t:"The road",d:"The panic spread far beyond Salem Village. People from more than twenty towns were accused, and Andover had more accused people than any other town.",
+   by:{proctor:"Every rut in this road is familiar. You never thought you would drive it as a criminal.",
+       mary:"Mr. Proctor drives fast. The wheels throw mud on your skirt, and he does not slow down.",
+       hale:"You have ridden this road in both directions, bringing your books and now bringing your doubts."}},
+  {x:.56,y:.54,t:"Toward Boston",d:"Many accused people were held in the Boston jail, where conditions were terrible. Sarah Osburn died there in May 1692, still waiting for a trial.",
+   by:{proctor:"Boston means ships, and ships mean New York. A man could disappear.",
+       mary:"Boston is where they take the witches who are going to hang. You do not want to look that way.",
+       hale:"Boston holds the governor and the ministers who have his ear. If anyone can stop this, they can."}},
+  {x:.5,y:.66,t:"The cart",d:"As the jails filled up, prisoners were moved between Salem, Ipswich, Boston, and Cambridge, often chained in open carts.",
+   by:{proctor:"The cart carries everything you could pack before dawn. It is not much.",
+       mary:"The cart is the only thing between you and Abigail’s eyes.",
+       hale:"A prison cart passed you this morning going the other way. You did not look at the faces."}},
+  {x:.1,y:.6,t:"The woods",d:"Massachusetts was at war on its northern frontier in 1692. Mercy Lewis, one of the accusers, had lost her parents in attacks in Maine, and many people saw the war and the witches as the same danger.",
+   by:{proctor:"Good timber. Putnam would claim it was his grandfather’s.",
+       mary:"Mercy Lewis says the Devil came to her once in the woods in Maine. She tells it the same way every time.",
+       hale:"The frontier is burning, and the Devil seems to be everywhere at once. Or that is what you told yourself."}},
+  {x:.8,y:.2,t:"The night sky",d:"Puritans believed God sent signs through storms, comets, and strange events, which ministers called “remarkable providences.” Many people read 1692 as a sign that God was angry with New England.",
+   by:{proctor:"Clear skies. No rain tomorrow. The hay will dry if anyone is home to turn it.",
+       mary:"You used to wish on stars. Abigail says that is how witches start.",
+       hale:"You search the sky for a sign that you are doing the right thing. The stars do not answer."}}],
  ledge:[
-  {x:.66,y:.44,t:"The ledge",d:"For centuries no one knew exactly where the hangings happened. In 2016, researchers confirmed a spot called Proctor’s Ledge, and a memorial was dedicated there in 2017."},
-  {x:.3,y:.9,t:"The crowd",d:"Executions were public, and the hanged were not buried in church ground. Rebecca Nurse’s family is said to have secretly recovered her body at night and buried it on the family farm."}],
+  {x:.66,y:.44,t:"The ledge",d:"For centuries no one knew exactly where the hangings happened. In 2016, researchers confirmed a spot called Proctor’s Ledge, and a memorial was dedicated there in 2017.",
+   by:{proctor:"A rough place to die. At least it is high enough to see your fields from.",
+       mary:"You can see the ledge from the road. You will see it every time you go to town for the rest of your life.",
+       hale:"You know this place too well now. You have climbed it with the condemned before."}},
+  {x:.3,y:.9,t:"The crowd",d:"Executions were public, and the hanged were not buried in church ground. Rebecca Nurse’s family is said to have secretly recovered her body at night and buried it on the family farm.",
+   by:{proctor:"So many faces. Some are crying. Some came for a show.",
+       mary:"You stand with the crowd so no one notices you. Everyone notices you.",
+       hale:"These people came because they trusted men like you to tell them the truth."}},
+  {x:.28,y:.58,t:"The sunrise",d:"Nineteen people were hanged in 1692 on four days: June 10, July 19, August 19, and September 22. Giles Corey was pressed to death on September 19.",
+   by:{proctor:"The sun is coming up the same way it does over the barn every morning.",
+       mary:"It is going to be a fine day. That seems wrong.",
+       hale:"Another dawn. You have started to dread the sunrise."}},
+  {x:.86,y:.62,t:"The hill",d:"For a long time people believed the hangings happened at the top of Gallows Hill. The real spot was lower, at a rocky ledge where the crowd could watch from the road below.",
+   by:{proctor:"The path is steep. You will not let them see you stumble.",
+       mary:"The hill looks small from here. It looked so much bigger in your nightmares.",
+       hale:"You walked up beside them. You will walk down alone."}},
+  {x:.45,y:.14,t:"The birds",d:"Reverend George Burroughs recited the Lord’s Prayer perfectly on the ladder, which people believed a witch could not do. The crowd wavered, but Cotton Mather calmed them, and the hanging went on.",
+   by:{proctor:"Crows circling. They know a hanging day as well as anyone.",
+       mary:"There is no yellow bird. There never was.",
+       hale:"Burroughs prayed perfectly, and they hanged him anyway. You still hear it."}}],
  village:[
-  {x:.5,y:.62,t:"The meetinghouse",d:"For years, Salem Village had fought over Reverend Parris, his salary, and who owned the parsonage. Families who supported Parris, like the Putnams, were among the most active accusers."},
-  {x:.14,y:.68,t:"The houses",d:"Salem Village, now the town of Danvers, was a farming community. It was separate from Salem Town, a busy port whose merchants many villagers resented."}]
+  {x:.5,y:.62,t:"The meetinghouse",d:"For years, Salem Village had fought over Reverend Parris, his salary, and who owned the parsonage. Families who supported Parris, like the Putnams, were among the most active accusers.",
+   by:{proctor:"You stopped going when Parris started preaching about money and hellfire. Now they hold it against you.",
+       mary:"The meetinghouse used to be where you sat in the back. Now it is where you sit up front.",
+       hale:"Church and courtroom, under one roof. You used to think that was a strength."}},
+  {x:.14,y:.68,t:"The houses",d:"Salem Village, now the town of Danvers, was a farming community. It was separate from Salem Town, a busy port whose merchants many villagers resented.",
+   by:{proctor:"Every house here has a name on someone’s list.",
+       mary:"You know who lives in every house, and who is angry at whom. So does Abigail.",
+       hale:"You have knocked on many of these doors with questions. Now people close their shutters when you pass."}},
+  {x:.5,y:.3,t:"The bell tower",d:"Church attendance was required by law in Massachusetts, and people who skipped services, as Proctor does in the play, could be fined.",
+   by:{proctor:"The bell calls everyone to worship. You are tired of being counted when you don’t answer it.",
+       mary:"When the bell rings now, people look for you to see if you are having a fit.",
+       hale:"You came to save this congregation from the Devil. You are no longer sure who the Devil was."}},
+  {x:.9,y:.69,t:"The lit window",d:"Neighbors watched each other closely. Much of the 1692 testimony was gossip about old quarrels, lost cattle, and sick children, sometimes from years before.",
+   by:{proctor:"Someone is up late. Probably writing down what they saw you do today.",
+       mary:"Somebody is awake in that house. You wonder if they are afraid of you now.",
+       hale:"A lamp burns late. Someone is praying, or someone is making a list."}},
+  {x:.5,y:.92,t:"The road to town",d:"Salem Village sat about five miles inland from Salem Town. The trials themselves were held in Salem Town, so accusers and the accused traveled that road again and again.",
+   by:{proctor:"Five miles to Salem Town. You have driven it with corn. Now you drive it with your wife’s life.",
+       mary:"You walk this road every morning to court. It feels shorter every time.",
+       hale:"You know every bend of this road now. You wish you had never learned it."}}]
 };
 
 /* ---------- canvas painter ---------- */
@@ -905,18 +1238,284 @@ function syncSnd(){document.querySelectorAll(".snd").forEach(b=>{const on=Sound.
 function toggleSnd(){if(Sound.isOn()){Sound.stop();setSoundPref(false);}else{Sound.start();setSoundPref(true);}syncSnd();}
 
 function artBlock(type){
-  return `<div class="art"><canvas id="cv" aria-hidden="true"></canvas>${(HS[type]||[]).map((x,i)=>`<button class="hs" type="button" data-i="${i}" style="left:${x.x*100}%;top:${x.y*100}%" aria-label="Examine: ${esc(x.t)}" title="${esc(x.t)}"></button>`).join("")}<span class="hint">Click a glowing mark to examine</span></div><div class="exhibit" id="exhibit" hidden></div>`;
+  return `<div class="art"><canvas id="cv" aria-hidden="true"></canvas>${(HS[type]||[]).map((x,i)=>`<button class="hs" type="button" data-i="${i}" style="left:${x.x*100}%;top:${x.y*100}%" aria-label="Examine: ${esc(x.t)}" title="${esc(x.t)}"></button>`).join("")}<span class="hint">${(HS[type]||[]).length} things to examine · click a glowing mark</span></div><div class="exhibit" id="exhibit" hidden></div>`;
 }
 function mountArt(type,opts){
   Art.show($("cv"),type,{bird:opts&&opts.bird,fear:opts&&opts.fear!=null?opts.fear:(st?st.fear/100:.15)});
   stage.querySelectorAll(".hs").forEach(b=>b.onclick=()=>{
     const x=HS[type][+b.dataset.i],ex=$("exhibit");
-    ex.hidden=false;ex.innerHTML=`<h3><span>${esc(x.t)}</span><button type="button">Close</button></h3><p>${esc(x.d)}</p>`;
+    const who=st&&x.by&&x.by[st.c]&&stage.querySelector(".scene:not(.title-card)")?CHARS[st.c].name:null;
+    ex.hidden=false;ex.innerHTML=`<h3><span>${esc(x.t)}</span><button type="button">Close</button></h3>${who?`<p class="pov"><span>${esc(who)}</span>${esc(x.by[st.c])}</p>`:""}<p>${who?'<span class="hist">In 1692</span>':""}${esc(x.d)}</p>`;
     ex.querySelector("button").onclick=()=>{ex.hidden=true;};
     b.classList.add("seen");Sound.quill();
   });
 }
 let lastAct=0;
+
+/* ---------- teacher settings (from the link the teacher posts) ---------- */
+const CFG=(()=>{let P;try{P=new URLSearchParams(location.search);}catch(e){P=new URLSearchParams("");}
+  const a=parseInt(P.get("act"),10);
+  return {lock:(a>=1&&a<=3)?a:0, mc:P.get("mc")==="1", vocab:P.get("vocab")!=="0", lit:P.get("lit")!=="0", ev:P.get("ev")!=="0"};})();
+
+/* ---------- vocabulary: [pattern, headword, meaning] ---------- */
+const VOCAB=[
+ ["spectral evidence","spectral evidence","Testimony that a person’s spirit, or “specter,” attacked the witness. Only the witness could see it, so the accused had no way to prove it false."],
+ ["invisible world","invisible world","The Puritan name for the spirit world of angels, demons, and witches that people believed existed alongside everyday life."],
+ ["Devil’s (?:book|man)","Devil’s book","People believed witches joined the Devil by signing their name in his book. A “Devil’s man” was someone who had signed."],
+ ["deputy governor","deputy governor","The second-highest official in the Massachusetts colony."],
+ ["sworn statement","sworn statement","A written account that the speaker swears before God is true. It is also called a deposition."],
+ ["under oath","under oath","Having sworn before God and the court to tell the truth. Lying under oath was a serious crime."],
+ ["cried out|cry out|crying out","cry out","In Salem, to cry out meant to accuse someone in public, often while having a fit."],
+ ["witchcraft","witchcraft","Using power from the Devil to harm other people. In Massachusetts in 1692 it was a crime punished by death."],
+ ["ministers?","minister","A Puritan pastor, the leader of a town’s church."],
+ ["Goody","Goody","Short for “Goodwife.” It was a polite title for an ordinary married woman, like “Mrs.” today."],
+ ["poppets?","poppet","A small doll. People believed a witch could hurt a victim by sticking pins in a poppet made to look like them."],
+ ["warrants?","warrant","An official paper from the court that allows an arrest."],
+ ["magistrates?","magistrate","A local judge. Magistrates questioned accused people to decide if they should be tried."],
+ ["examinations?|examines","examination","The formal questioning of an accused person before a trial, usually in front of a crowd."],
+ ["lecher(?:y)?","lechery","Lust, or chasing after sex outside of marriage. A lecher is a man who does this."],
+ ["harlot","harlot","An insulting word for a woman thought to be sexually immoral."],
+ ["adultery","adultery","Breaking a marriage vow by being with someone other than your husband or wife. It is forbidden by the seventh commandment."],
+ ["contempt","contempt","Refusing to obey or show respect to a court. A judge can jail someone for it."],
+ ["petitions?","petition","A written request to someone in power, signed by many people."],
+ ["marshal","marshal","An officer of the court who made arrests and guarded prisoners."],
+ ["gallows","gallows","The wooden frame used for hangings."],
+ ["meetinghouse","meetinghouse","The main Puritan building in town, used for church on Sunday and for town meetings and court during the week."],
+ ["afflicted","afflicted","The people, mostly girls and young women, who claimed witches were tormenting them."],
+ ["baptized","baptized","Welcomed into the church through baptism. An unbaptized child was a sign that a family was not following the church."],
+ ["hellfire","hellfire","Preaching that focuses on the punishment of hell."],
+ ["condemned","condemned","Sentenced to death."],
+ ["pressed","pressed","An old punishment for refusing to enter a plea. Heavy stones were piled on the person’s body until they answered or died."],
+ ["plea","plea","A person’s formal answer to a charge: guilty or not guilty. Without a plea, there could be no trial."],
+ ["pardoned","pardoned","Officially forgiven by the government and freed from punishment."],
+ ["heirs","heirs","The family members who inherit a person’s property."],
+ ["estate","estate","Everything a person owns, including land, house, and money."],
+ ["cooper’s","cooper","A craftsman who makes barrels."],
+ ["Puritans?","Puritan","Strict English Protestants who founded the Massachusetts colony. They wanted to “purify” the church and lived by firm religious rules."],
+ ["confess(?:ed|ion|ions)?","confess","To admit to a crime. In 1692 it meant admitting to witchcraft, even if it was a lie."]
+];
+const VRE=new RegExp("\\b("+VOCAB.map(v=>v[0]).join("|")+")\\b","gi");
+const VTEST=VOCAB.map(v=>new RegExp("^(?:"+v[0]+")$","i"));
+let vSeen=new Set();
+function deco(html){
+  if(!CFG.vocab) return html;
+  return html.replace(VRE,m=>{const i=VTEST.findIndex(r=>r.test(m)); if(i<0||vSeen.has(i)) return m; vSeen.add(i);
+    return `<button type="button" class="vw" data-v="${i}">${m}</button>`;});
+}
+function vocabPop(i,btn){
+  const v=VOCAB[i],p=$("vpop");
+  p.innerHTML=`<h3><span>${esc(v[1])}</span><button type="button" aria-label="Close">Close</button></h3><p>${esc(v[2])}</p>`;
+  p.hidden=false; p.querySelector("button").onclick=()=>{p.hidden=true;btn&&btn.focus();};
+  Sound.quill();
+}
+
+/* ---------- literary terms ---------- */
+const TERMS={
+ "Dramatic irony":"When the audience knows something a character does not.",
+ "Situational irony":"When what happens is the opposite of what you would expect.",
+ "Foreshadowing":"A hint early in the story about something that will happen later.",
+ "Tragic flaw":"A weakness in an otherwise good main character that leads to his downfall. It is also called hamartia.",
+ "Tragic hero":"A good but flawed main character who falls because of his own choices and comes to understand himself before the end.",
+ "Symbol":"An object, person, or event that stands for a bigger idea.",
+ "Motif":"An image or idea that keeps coming back and helps build a theme.",
+ "Internal conflict":"A struggle inside a character’s own mind, between two things they want or believe.",
+ "External conflict":"A struggle between a character and an outside force, such as another person or society.",
+ "Foil":"A character whose differences from another character make that character’s traits stand out.",
+ "Dynamic character":"A character who changes in an important way over the story.",
+ "Climax":"The turning point of the story, where the main conflict reaches its highest tension.",
+ "Characterization":"How a writer shows what a character is like, through their words, actions, and how others react to them.",
+ "Theme":"A central message or insight about life that the story explores.",
+ "Allegory":"A story with a second meaning beneath the surface, where characters and events stand for real people, events, or ideas.",
+ "Catharsis":"The release of strong emotion, like pity or fear, that an audience feels at the end of a tragedy.",
+ "Antagonist":"The character or force that works against the main character."
+};
+const LIT={
+ a1_open:[["Tragic flaw","Proctor’s affair with Abigail, and his pride about keeping it hidden, is the weakness that the whole tragedy grows out of."],["Internal conflict","Proctor is pulled between guilt, lingering feelings for Abigail, and wanting to be a good husband."]],
+ a1_hale:[["Foreshadowing","The girls’ first wave of names hints at how fast accusations will spread once people learn that naming others protects you."],["Characterization","Hale arrives proud and certain. Notice how sure he is now, so you can see how much he changes later."]],
+ a1_confess:[["Theme","This alternate path tests one of the play’s big ideas: is it better to protect your reputation, or to tell the truth and lose it?"]],
+ a2_home:[["Symbol","The cold house stands for the broken trust in the Proctors’ marriage."],["Foreshadowing","The rag doll Mary hands Elizabeth seems harmless now. Watch what it becomes."]],
+ a2_hale:[["Situational irony","Proctor, a man proud of his honesty, can’t remember the one commandment he broke: adultery."],["Symbol","The poppet with the needle turns a gift into “proof.” It stands for how anything can become evidence in a panic."]],
+ a2_flee:[["External conflict","Running away puts Proctor in open conflict with the whole society of Salem, not just one accuser."]],
+ a2_vow:[["Internal conflict","To expose Abigail, Proctor will have to expose his own sin. Saving Elizabeth and protecting his name now pull in opposite directions."]],
+ a3_court:[["Antagonist","Danforth is not a simple villain. He believes in the court, and that belief makes him dangerous. Ask whether the real antagonist is a person or the system."]],
+ a3_giles:[["Motif","Names keep coming back: names given, names refused, names on a petition. Giles will die rather than give one."],["Situational irony","A petition meant to prove people innocent becomes a list of new suspects."]],
+ a3_girls:[["Motif","Proctor’s “name,” his reputation, is about to be sacrificed. The game’s title comes from this motif."],["Theme","The girls’ shivering shows mass hysteria: fear spreading from person to person faster than reason can stop it."]],
+ a3_lie:[["Dramatic irony","You know Proctor has already confessed. Elizabeth doesn’t. Her lie to protect him is exactly what ruins him."],["Situational irony","The woman who “never lies” tells one lie, and it is the one that matters most."]],
+ a3_bird:[["Climax","This is the turning point of the play. Mary breaks, Proctor is arrested, and there is no going back."],["Symbol","The yellow bird no one else can see stands for spectral evidence: accusations nobody can disprove."]],
+ a4_cell:[["Dynamic character","Hale came to find witches. Now he begs innocent people to lie. Compare him with the man in Act I."],["Situational irony","A minister is now urging people to lie in order to live."]],
+ a4_eliz:[["Dynamic character","Elizabeth changes too. She takes part of the blame for the cold house, and her forgiveness frees Proctor to choose."]],
+ a4_paper:[["Symbol","The signed paper stands for Proctor’s name, which is to say his identity and his integrity."],["Tragic hero","A tragic hero falls but comes to understand himself. Watch for the moment Proctor understands what his name is worth."]],
+ e_name:[["Tragic hero","Proctor dies, but he regains his goodness and self-respect. That recognition is what makes him a tragic hero."],["Catharsis","Notice what you feel at this ending. Tragedy aims to leave the audience with both sorrow and a kind of release."]],
+ e_live:[["Theme","This ending flips Miller’s. It asks whether staying alive is worth losing your name and your conscience."]],
+ e_broken:[["Motif","The names motif ends at its darkest: Proctor saves himself by handing over other people’s names."]],
+ e_silent:[["Theme","This ending explores complicity: how ordinary silence lets injustice keep going."]],
+ e_flight:[["Theme","Escape saves one family but changes nothing for anyone else. Is escape the same as resistance?"]],
+ m1_woods:[["Foil","Timid Mary and fierce Abigail are opposites. Each makes the other’s personality stand out."]],
+ m1_names:[["Characterization","Mary has never had power. Notice how the room’s attention changes her."]],
+ m2_court:[["Theme","Mary’s “memory” of a curse shows how suggestion and pressure can make people believe things that never happened."]],
+ m2_poppet:[["Dramatic irony","You know Abigail put the needle in the doll. Cheever doesn’t, and he treats it as proof."],["Symbol","The poppet is innocent cloth until fear turns it into evidence."]],
+ m3_court:[["External conflict","Mary stands alone against Abigail, the girls, and the court."],["Climax","For Mary, this is the turning point. Everything depends on whether she can hold on to the truth."]],
+ m3_hold:[["Internal conflict","Mary is torn between the truth and the pain of saying it."]],
+ m4_dawn:[["Situational irony","Abigail, who started it all, escapes with money. The people she accused hang."]],
+ e_m_jailturn:[["Characterization","Is Mary a villain or a victim? The way the writing shows her nights alone suggests both."]],
+ e_m_late:[["Theme","Truth told too late can’t undo the harm, but it still matters to the person telling it."]],
+ h1_arrive:[["Characterization","Hale’s armful of books shows he trusts learning to give him answers."],["Foreshadowing","Rebecca warns that hunting spirits will tear the village apart. She is right."]],
+ h1_tituba:[["Theme","Authority is a theme here. Everyone waits for the expert to tell them what to believe."]],
+ h2_proctor:[["Dramatic irony","You know why Proctor forgets “adultery.” Hale doesn’t."],["Dynamic character","Rebecca’s arrest plants the first doubt in Hale. His change starts here."]],
+ h3_court:[["Climax","Proctor’s arrest is the turning point for Hale, too. He sees what his work has done."]],
+ h4_jail:[["Situational irony","The minister who came to fight the Devil now urges people to lie."],["Dynamic character","Compare this Hale with the confident expert from Act I."]],
+ e_h_counsel:[["Dynamic character","Hale has changed more than anyone in the play, but his change comes too late to save Proctor."]],
+ e_h_inside:[["Theme","This ending asks when working “from the inside” turns into going along."]]
+};
+function litBlock(id){
+  if(!CFG.lit||!LIT[id]) return "";
+  return `<div class="lens"><span class="lens-k">Literary lens</span>${LIT[id].map((t,i)=>`<button type="button" class="chip" data-l="${i}" aria-expanded="false">${esc(t[0])}</button>`).join("")}</div><div class="lensbox" id="lensbox" hidden></div>`;
+}
+function mountLit(id){
+  stage.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
+    const t=LIT[id][+b.dataset.l],box=$("lensbox"),open=b.getAttribute("aria-expanded")==="true";
+    stage.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-expanded","false"));
+    if(open){box.hidden=true;return;}
+    b.setAttribute("aria-expanded","true");
+    box.innerHTML=`<p class="def"><b>${esc(t[0])}:</b> ${esc(TERMS[t[0]]||"")}</p><p>${deco(esc(t[1]))}</p>`;
+    box.hidden=false; Sound.quill();
+  });
+}
+
+/* ---------- the 1953 layer: Miller's play and the Red Scare ---------- */
+const MC={
+ a1_open:"Miller wrote The Crucible in 1952 and 1953, during the Red Scare, when Americans were being accused of secretly working for Communism. Senator Joseph McCarthy and the House Un-American Activities Committee (HUAC) led many of the hunts. Miller saw the same pattern as Salem: once the fear started, an accusation could ruin you almost as badly as proof.",
+ a1_hale:"In the 1950s, former Communists who confessed and named others were treated as expert witnesses, much like Tituba’s confession was treated as proof. Confessing and naming names was the surest way to be cleared.",
+ a2_home:"In February 1950, McCarthy claimed he had a list of Communists working in the State Department. The number on his list kept changing, and he never proved his claims. The list still frightened the country, just as Mary’s growing count of prisoners frightens the Proctors.",
+ a2_hale:"Starting in 1947, government workers faced loyalty reviews. They could be questioned about the groups they had joined, the books they read, and the friends they kept, a little like Hale testing whether Proctor is a good Christian.",
+ a2_flee:"Some people left the country during the Red Scare. In 1952 the actor Charlie Chaplin sailed to England, and the U.S. government blocked his return. He did not come back to live.",
+ a2_vow:"Hearings often depended on people turning in co-workers, friends, and even family. Many faced Proctor’s problem: telling the truth about others might also mean exposing your own past.",
+ a3_court:"HUAC hearings were not trials. People called to testify could not cross-examine the people who had accused them, and refusing to cooperate could cost them their jobs, much as Proctor’s charge is treated as an attack on the court itself.",
+ a3_giles:"In 1947 ten Hollywood screenwriters and directors, known as the Hollywood Ten, refused to answer HUAC’s questions. They were convicted of contempt of Congress and went to prison. Many people were also blacklisted just for having signed a petition or joined a group years before, like the 91 signers in this scene.",
+ a3_bird:"Like spectral evidence, many 1950s accusations were hard to disprove, because they were about secret beliefs and hidden memberships. In 1954, during televised hearings, the lawyer Joseph Welch finally confronted McCarthy: “Have you no sense of decency, sir?” Public opinion began to turn.",
+ a4_cell:"The Red Scare faded as the public turned against it. In December 1954 the U.S. Senate officially censured McCarthy, and his power collapsed.",
+ a4_paper:"In 1956 Miller himself was called before HUAC. He answered questions about his own past but refused to name other people he had seen at meetings. He was convicted of contempt of Congress in 1957. The conviction was overturned in 1958.",
+ e_name:"Three years after the play opened, Miller made almost the same choice as his hero. Before HUAC in 1956, he spoke about himself but would not name anyone else.",
+ e_live:"People who cooperated with HUAC were called “friendly witnesses.” Many of them kept their careers, but some later said they regretted what they had done.",
+ e_broken:"In 1952 the film director Elia Kazan, a close friend and collaborator of Miller’s, named eight former Communist Party members to HUAC. Miller and Kazan did not work together again for years. Many readers see The Crucible as Miller’s answer to choices like Kazan’s.",
+ e_silent:"During the Red Scare many people stayed quiet to protect their jobs and families, even when they knew friends were being treated unfairly. Miller wrote the play partly about that silence.",
+ e_flight:"Some blacklisted writers kept working in secret under other names. Dalton Trumbo, one of the Hollywood Ten, wrote the 1953 film Roman Holiday, but a friend’s name went on the screen. His credit was not restored until 2011.",
+ e_early:"The Red Scare was bigger than McCarthy. It started before him and continued for a while after his fall, just as Salem’s panic was bigger than Abigail.",
+ m1_names:"In the 1950s, people who named others in hearings were often praised as patriots and protected from blame. Naming names brought attention and safety.",
+ m3_court:"Witnesses who changed their stories faced real danger. Taking back testimony meant admitting you had lied before.",
+ e_m_late:"In 1955 Harvey Matusow, a paid government witness, admitted he had lied about many people he had accused and wrote a book called False Witness. Few people he accused got their lives back, and Matusow was later sent to prison for perjury.",
+ e_m_accuser:"Most informers during the Red Scare were never punished. Many of the people they accused lost jobs and careers that never came back.",
+ h1_arrive:"In the Red Scare, officials and “experts” claimed they knew how to spot hidden Communists. Like Hale’s books, their confidence made the hunt feel scientific.",
+ h3_court:"In 1954 the lawyer Joseph Welch stood up to McCarthy on live television, asking, “Have you no sense of decency, sir?” It was a moment when someone inside the process finally said no.",
+ h4_jail:"By the mid-1950s, some officials who had supported the hearings began to admit that innocent people had been hurt.",
+ e_h_book:"In March 1954, the journalist Edward R. Murrow aired a TV broadcast criticizing McCarthy’s methods. Like Hale’s ride to Boston, speaking to people with power helped bring the panic to an end.",
+ e_h_inside:"Some government officials doubted the loyalty hunts but stayed in their jobs, hoping to slow things down from the inside.",
+ e_h_counsel:"Miller once said the play was about how fear lets ordinary people do terrible things. Hale, the expert who changes too late, is one of the clearest examples."
+};
+MC.m1_woods=MC.a1_open; MC.h1_tituba=MC.a1_hale; MC.m2_court=MC.a2_home; MC.m2_poppet=MC.a2_hale; MC.h2_proctor=MC.a2_hale;
+MC.m3_hold=MC.a2_vow; MC.m4_dawn=MC.a4_cell; MC.e_m_truth=MC.a3_giles; MC.e_m_jailturn=MC.e_live; MC.e_h_witness=MC.a4_paper; MC.a4_eliz=MC.a4_cell; MC.a3_girls=MC.a3_court; MC.a3_lie=MC.a3_court; MC.a1_confess=MC.e_early;
+
+Object.assign(LIT,{
+ a1_land:[["Foreshadowing","Putnam’s warning about whose land a man takes hints that greed, not just fear, will drive some of the accusations."],["Characterization","Putnam is shown through his money, his lawsuits, and his threats. Watch how those traits shape what he does later."]],
+ a2_fields:[["Foreshadowing","The paper Francis brings will matter in Act III, though not in the way he hopes."]],
+ a4_rebecca:[["Foil","Rebecca is calm and certain about what she must do. Proctor is still torn. Her steadiness makes his struggle stand out."]],
+ m1_night:[["Characterization","Elizabeth’s carefully even voice shows how much she is holding back about Abigail."]],
+ m2_sewing:[["Dramatic irony","You see Abigail with the needle. No one else in the play will believe it."]],
+ m3_before:[["External conflict","Mary is caught between two powerful people, Proctor and Abigail, and each one is pushing her a different way."]],
+ m3_eliz:[["Foil","Elizabeth and Abigail both guide Mary, but in opposite ways: one by threats, the other by kindness."]],
+ h1_putnam:[["Theme","Grief turns into blame here. The play shows how private pain can become public accusation."]],
+ h2_court:[["Theme","The magistrate assumes guilt before asking a single question. Justice in Salem runs backward."]],
+ h3_warrants:[["Internal conflict","Hale’s loyalty to the court is now at war with his growing doubts."]],
+ h4_parris:[["Situational irony","Parris helped start the hunt. Now he is the one most afraid of it."]]
+});
+MC.a1_land="Many historians see self-interest in both panics. During the Red Scare, some accusations came from rivals or people settling old scores, and some people built careers by naming others.";
+MC.h1_putnam=MC.a1_land; MC.a2_fields=MC.a3_giles; MC.a4_rebecca=MC.a4_paper; MC.h2_court=MC.a3_court; MC.h3_warrants=MC.e_h_inside; MC.h4_parris=MC.a4_cell; MC.m3_before=MC.m3_court; MC.m3_eliz=MC.a3_giles; MC.m2_sewing=MC.a2_hale; MC.m1_night=MC.a2_vow;
+/* ---------- lock: stop when the next scene is past the act the class has read ---------- */
+function lockedScreen(sc){
+  const C=CHARS[st.c];
+  const pathText=st.log.map((l,i)=>`${i+1}. Act ${ACTS[l.act-1]}, ${l.scene}: ${l.choice}`).join("\n");
+  const copyText=`Proctor’s Name, played as ${C.name} (stopped at end of Act ${ACTS[CFG.lock-1]})\nName ${st.name} · Conscience ${st.con} · Salem’s Fear ${st.fear}\n\nMy choices:\n${pathText}`;
+  stage.innerHTML=`<section class="scene ending">
+    ${artBlock("village")}
+    <div class="seal" style="color:var(--ember)">Stop here for now</div>
+    <h1>The rest of the story is locked</h1>
+    <div class="prose"><p>Your class has read through Act ${ACTS[CFG.lock-1]}. The next scene happens in Act ${ACTS[sc.act-1]}, so your teacher has paused the game here. Once your class reads further, your teacher will open more of the story.</p>
+    <p>Before you go, look at your meters. What do you predict will happen next?</p></div>
+    <div class="block path"><h2>Your path so far</h2><ol>${st.log.map(l=>`<li><span>Act ${ACTS[l.act-1]}</span>${esc(l.choice)}</li>`).join("")}</ol></div>
+    <div class="row">
+      <button class="btn" id="copy" type="button">Copy my path</button>
+      <button class="btn ghost" id="other" type="button">Back to the title</button>
+    </div>
+    <p class="note" id="copynote"></p>
+    <textarea id="copybox" readonly hidden>${esc(copyText)}</textarea>
+  </section>`;
+  mountArt("village",{});
+  $("other").onclick=title;
+  wireCopy(copyText);
+}
+function wireCopy(copyText){
+  $("copy").onclick=()=>{
+    const box=$("copybox");
+    const fallback=()=>{box.hidden=false;box.focus();box.select();$("copynote").textContent="Select all and copy the text below.";};
+    try{navigator.clipboard.writeText(copyText).then(()=>{$("copynote").textContent="Copied. Paste it into your assignment.";},fallback);}catch(e){fallback();}
+  };
+}
+
+/* ---------- evidence gate: choices unlock after every mark is examined ---------- */
+function gateChoices(){
+  const marks=[...stage.querySelectorAll(".hs")], btns=[...stage.querySelectorAll(".choice")], gate=$("gate"), seen=new Set();
+  const update=()=>{
+    const left=marks.length-seen.size;
+    btns.forEach(b=>{b.disabled=left>0;});
+    if(left>0){gate.className="gate";gate.innerHTML=`Examine every glowing mark in the picture to unlock your choices. <b>${seen.size} of ${marks.length}</b> examined.`;}
+    else{gate.className="gate done";gate.textContent=`All ${marks.length} examined. Your choices are open.`;}
+  };
+  marks.forEach((m,i)=>m.addEventListener("click",()=>{seen.add(i);update();}));
+  update();
+}
+
+/* ---------- teacher mode ---------- */
+function cfgNote(){
+  const bits=[];
+  if(CFG.lock) bits.push(`Acts ${CFG.lock===1?"I":"I–"+ACTS[CFG.lock-1]} only`);
+  if(CFG.mc) bits.push("1953 notes on");
+  if(!CFG.vocab) bits.push("vocabulary off");
+  if(!CFG.lit) bits.push("literary lens off");
+  if(!CFG.ev) bits.push("evidence optional");
+  return bits.length?`<p class="tcfg">Your teacher’s settings: ${bits.join(" · ")}</p>`:"";
+}
+function teacherPanel(){
+  const el=$("tpanel"); if(!el) return;
+  if(!el.hidden){el.hidden=true;return;}
+  el.hidden=false;
+  el.innerHTML=`<h2>Teacher mode</h2>
+   <p>Choose settings, then copy the link and post it in Canvas. Students who open that link get these settings.</p>
+   <label>Open the story through
+     <select id="t-act"><option value="1">Act I</option><option value="2">Act II</option><option value="3">Act III</option><option value="0">All four acts</option></select></label>
+   <label class="tick"><input type="checkbox" id="t-mc"> Add the 1953 layer (McCarthyism and the Red Scare) to every Court Record</label>
+   <label class="tick"><input type="checkbox" id="t-vocab"> Vocabulary pop-ups</label>
+   <label class="tick"><input type="checkbox" id="t-lit"> Literary lens (literary terms in each scene)</label>
+   <label class="tick"><input type="checkbox" id="t-ev"> Students must examine every glowing mark before they can choose</label>
+   <div class="row" style="margin-top:6px"><button class="btn" id="t-copy" type="button">Copy student link</button><button class="btn ghost" id="t-try" type="button">Try these settings</button></div>
+   <input id="t-link" class="tlinkbox" readonly aria-label="Student link">
+   <p class="note" id="t-note"></p>
+   <p class="small">The lock keeps students from reading ahead by accident. A student who edits the link could get around it, so treat it as a guardrail, not a security measure.</p>`;
+  $("t-act").value=String(CFG.lock); $("t-mc").checked=CFG.mc; $("t-vocab").checked=CFG.vocab; $("t-lit").checked=CFG.lit; $("t-ev").checked=CFG.ev;
+  const build=()=>{const q=new URLSearchParams();const a=$("t-act").value;if(a!=="0")q.set("act",a);if($("t-mc").checked)q.set("mc","1");if(!$("t-vocab").checked)q.set("vocab","0");if(!$("t-lit").checked)q.set("lit","0");if(!$("t-ev").checked)q.set("ev","0");
+    const base=location.href.split(/[?#]/)[0];const s=q.toString();return base+(s?"?"+s:"");};
+  const upd=()=>{$("t-link").value=build();};
+  el.querySelectorAll("select,input[type=checkbox]").forEach(x=>x.onchange=upd); upd();
+  $("t-copy").onclick=()=>{const v=build(),box=$("t-link");
+    const fb=()=>{box.focus();box.select();$("t-note").textContent="Select the link above and copy it.";};
+    try{navigator.clipboard.writeText(v).then(()=>{$("t-note").textContent="Link copied. Paste it into Canvas.";},fb);}catch(e){fb();}};
+  $("t-try").onclick=()=>{location.href=build();};
+  el.scrollIntoView({behavior:"smooth",block:"start"});
+}
+document.addEventListener("click",e=>{
+  const b=e.target.closest&&e.target.closest(".vw"); if(b){e.preventDefault();vocabPop(+b.dataset.v,b);return;}
+  const p=$("vpop"); if(p&&!p.hidden&&!e.target.closest("#vpop")) p.hidden=true;
+});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){const p=$("vpop");if(p)p.hidden=true;}});
 
 /* ---------- state ---------- */
 let st;
@@ -931,7 +1530,7 @@ function esc(t){return String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;","
 
 function hud(sc){
   $("hud").hidden=false;
-  $("acts").innerHTML=ACTS.map((a,i)=>`<span class="${i+1===sc.act?'on':(i+1<sc.act?'done':'')}">Act ${a}</span>`).join("");
+  $("acts").innerHTML=ACTS.map((a,i)=>`<span class="${i+1===sc.act?'on':(i+1<sc.act?'done':'')}${CFG.lock&&i+1>CFG.lock?' lock':''}"${CFG.lock&&i+1>CFG.lock?' title="Locked by your teacher"':''}>Act ${a}</span>`).join("");
   [["name","name"],["con","con"],["fear","fear"]].forEach(([k])=>{$("v-"+k).textContent=st[k];$("b-"+k).style.width=st[k]+"%";});
   document.documentElement.style.setProperty("--fear",(st.fear/100).toFixed(2));
   Art.setFear(st.fear/100); Sound.setFear(st.fear/100); syncSnd();
@@ -969,10 +1568,15 @@ function title(){
       <div><dt style="color:var(--blood)">Salem’s Fear</dt><dd>How far the panic has spread.</dd></div>
     </dl>
     <p class="found">Every path covers all four acts. You have found ${got} of ${total} endings.</p>
+    ${CFG.vocab?'<p class="found">Words with a dotted underline are clickable. Tap one to see what it meant in 1692.</p>':''}
+    ${cfgNote()}
     <p class="found">Music: “Old Hundredth,” a psalm tune from 1551 that Puritan congregations sang. When Salem’s Fear passes the halfway mark, the tune turns to a minor key and a drum comes in.</p>
+    <button class="tlink" id="tbtn" type="button">For teachers: lock acts and add the 1953 layer</button>
+    <div id="tpanel" hidden></div>
   </section>`;
   mountArt("village",{fear:.15});
   $("titlesnd").onclick=toggleSnd; syncSnd();
+  $("tbtn").onclick=teacherPanel;
   stage.querySelectorAll(".pick").forEach(b=>b.onclick=()=>{st=fresh(b.dataset.c);lastAct=0;if(soundPref())Sound.start();go(st.id);});
 }
 
@@ -981,7 +1585,9 @@ function go(id){
   st.id=id; const sc=S[id];
   window.scrollTo({top:0,behavior:"smooth"});
   hud(sc);
+  if(CFG.lock&&sc.act>CFG.lock){return lockedScreen(sc);}
   if(sc.act!==lastAct){lastAct=sc.act;Sound.bell();}
+  vSeen=new Set(); $("vpop").hidden=true;
   if(sc.ending){return ending(id,sc);}
   const chs=sc.choices;
   const paras=sc.body(st).filter(Boolean);
@@ -990,14 +1596,18 @@ function go(id){
     ${artBlock(type)}
     <div class="docket"><span>Act ${ACTS[sc.act-1]}</span><span>${esc(sc.place)}</span><span>${esc(sc.when)}</span></div>
     <h1>${esc(sc.title)}</h1>
-    <div class="prose">${paras.map((p,i)=>`<p style="--i:${i}">${esc(p)}</p>`).join("")}</div>
+    <div class="prose">${paras.map((p,i)=>`<p style="--i:${i}">${deco(esc(p))}</p>`).join("")}</div>
+    ${CFG.ev&&(HS[type]||[]).length?`<p class="gate" id="gate" role="status"></p>`:""}
     <div class="choices">${chs.map((c,i)=>`<button class="choice" type="button" style="--d:${(paras.length*.22+.15+i*.08).toFixed(2)}" data-i="${i}" data-k="${"ABC"[i]}">${esc(c.t)}</button>`).join("")}</div>
-    <details class="record"><summary>Court Record: the play and 1692</summary>
-      <div class="cols"><div class="col"><h3>In the play</h3><p>${esc(sc.record.play)}</p></div>
-      <div class="col"><h3>In 1692</h3><p>${esc(sc.record.history)}</p></div></div>
+    ${litBlock(id)}
+    <details class="record"><summary>Court Record: the play${CFG.mc&&MC[id]?", 1692, and 1953":" and 1692"}</summary>
+      <div class="cols"><div class="col"><h3>In the play</h3><p>${deco(esc(sc.record.play))}</p></div>
+      <div class="col"><h3>In 1692</h3><p>${deco(esc(sc.record.history))}</p></div></div>
+      ${CFG.mc&&MC[id]?`<div class="y1953"><h3>In 1953: why Miller wrote it</h3><p>${deco(esc(MC[id]))}</p></div>`:""}
     </details>
   </section>`;
-  mountArt(type,{bird:BIRD.has(id)});
+  mountArt(type,{bird:BIRD.has(id)}); mountLit(id);
+  if(CFG.ev&&(HS[type]||[]).length) gateChoices();
   stage.querySelectorAll(".choice").forEach(b=>b.onclick=()=>{
     Sound.quill();
     const c=chs[+b.dataset.i]; const fx=c.fx||{};
@@ -1029,9 +1639,11 @@ function ending(id,sc){
     ${artBlock(type)}
     <div class="seal">${esc(sc.seal)}</div>
     <h1>${esc(sc.title)}</h1>
-    <div class="prose">${sc.body(st).filter(Boolean).map(p=>`<p>${esc(p)}</p>`).join("")}</div>
+    <div class="prose">${sc.body(st).filter(Boolean).map(p=>`<p>${deco(esc(p))}</p>`).join("")}</div>
     <div class="verdict">${esc(verdict())}</div>
-    <div class="block after"><h2>What really happened</h2><p>${esc(sc.record)}</p>
+    ${litBlock(id)}
+    <div class="block after"><h2>What really happened</h2><p>${deco(esc(sc.record))}</p>
+      ${CFG.mc&&MC[id]?`<div class="y1953"><h3>In 1953: why Miller wrote it</h3><p>${deco(esc(MC[id]))}</p></div>`:""}
       <p>Afterward: in 1711 the colony reversed the convictions of John Proctor and others and paid their families. The Proctor heirs received £150. Massachusetts cleared more names in 1957 and 2001, and the last person convicted, Elizabeth Johnson Jr., was cleared in 2022. In 2016, researchers confirmed Proctor’s Ledge in Salem as the place where the hangings happened.</p></div>
     <div class="block"><h2>Talk about it</h2><ol>${sc.questions.map(q=>`<li>${esc(q)}</li>`).join("")}<li>Miller wrote this play in 1953 about the Red Scare, when Americans were accused of being Communists. Which of your choices would have played out the same way in 1953? In a school today?</li></ol></div>
     <div class="block path"><h2>Your path</h2><ol>${st.log.map(l=>`<li><span>Act ${ACTS[l.act-1]}</span>${esc(l.choice)}</li>`).join("")}</ol></div>
@@ -1044,7 +1656,7 @@ function ending(id,sc){
     <p class="note" id="copynote"></p>
     <textarea id="copybox" readonly hidden>${esc(copyText)}</textarea>
   </section>`;
-  mountArt(type,{});
+  mountArt(type,{}); mountLit(id);
   $("again").onclick=()=>{st=fresh(st.c);lastAct=0;go(st.id);};
   $("other").onclick=title;
   $("copy").onclick=()=>{
