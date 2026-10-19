@@ -31,10 +31,10 @@ body::after{content:"";position:fixed;left:50%;top:-30vh;width:120vw;height:80vh
   animation:flicker 5s infinite ease-in-out}
 @keyframes flicker{0%,100%{opacity:.8}40%{opacity:.6}55%{opacity:.9}70%{opacity:.7}}
 @media (prefers-reduced-motion: reduce){body::after{animation:none}*{transition:none!important}}
-.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto}
 
 header{display:flex;flex-direction:column;gap:14px;padding-block:22px 18px;border-bottom:1px solid var(--line)}
-.top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.top{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;text-align:center}
 .brand{font-family:var(--f-caps);font-size:22px;letter-spacing:.04em;color:var(--ember);background:none;border:0;padding:0;cursor:pointer}
 .acts{display:flex;gap:6px;font-family:var(--f-caps);font-size:16px;color:var(--dim)}
 .acts span{padding:1px 8px;border:1px solid var(--line);border-radius:2px}
@@ -56,7 +56,7 @@ main{padding-block:28px 0}
 .docket span:first-child{color:var(--ember)}
 h1{font-family:var(--f-display);font-weight:400;font-size:clamp(32px,7vw,54px);line-height:1.1;margin:10px 0 18px;text-wrap:balance}
 h2{font-family:var(--f-display);font-weight:400;font-size:27px;margin:0 0 8px}
-.prose{display:flex;flex-direction:column;gap:16px;max-width:70ch}
+.prose{display:flex;flex-direction:column;gap:16px;max-width:none}
 .prose p{margin:0}
 .prose .aside{font-style:italic;color:var(--dim)}
 .scene{animation:rise .6s ease both}
@@ -86,7 +86,7 @@ details[open] summary::before{content:"\2212 "}
 .legend div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px;font-size:16.5px}
 .legend dt{font-family:var(--f-record);font-size:13.5px;text-transform:uppercase;letter-spacing:.08em;padding-top:3px}
 .legend dd{margin:0}
-.toprt{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.toprt{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap}
 .snd{font-family:var(--f-record);font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);background:transparent;border:1px solid var(--line);padding:4px 10px;cursor:pointer}
 .snd[aria-pressed="true"]{border-color:var(--ember);color:var(--ember)}
 .snd:focus-visible,.hs:focus-visible{outline:2px solid var(--ember);outline-offset:2px}
